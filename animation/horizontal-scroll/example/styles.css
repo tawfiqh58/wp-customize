@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.section {
+    height: 80vh; /* Make each section take up full viewport height */
+}
+
+.horizontal-scroll {
+    overflow: hidden; /* Hide anything outside the section */
+    height: 100vh;
+}
+
+.card-list {
+    display: inline-flex;
+    white-space: nowrap; /* Prevent wrapping */
+    padding: 20px;
+}
+
+.card {
+    width: 400px;
+    height: 600px;
+    margin-right: 20px;
+    background-color: black;
+    padding: 15px;
+    color: white;
+}
+
+@media screen and (max-width: 768px) { 
+    .horizontal-scroll {
+      width: 100%;
+      display: none;
+    }
+    .card {
+      display: block; 
+      width: auto;
+      margin: 10px auto;
+    }
+  }
+  
+  
