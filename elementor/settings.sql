@@ -1,5 +1,10 @@
--- WP Data Access
+-- WP Data Access (only english site)
 SELECT ID FROM wp_posts WHERE post_title = 'Default Kit' AND post_status = 'publish';
+-- Check post title meaning = "Default Kit"
+SELECT *
+FROM wp_posts
+WHERE post_type = 'elementor_library'
+  AND post_status = 'publish';
 
 -- Find the value of publish settings (post_id=previous-output)
 SELECT meta_value FROM wp_postmeta WHERE post_id = 6 AND meta_key = '_elementor_page_settings';
