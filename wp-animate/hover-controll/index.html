@@ -1,0 +1,47 @@
+<style>
+  #hover-img,
+  #opacity-img {
+    transition: opacity 0.5s ease-in-out;
+  }
+  .hide-on-hover,
+  .show-on-hover {
+    transition: opacity 0.6s ease-in-out;
+  }
+  .hide-on-hover {
+    opacity: 1;
+  }
+
+  .show-on-hover {
+    opacity: 0;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hoverImg = document.getElementById("hover-img");
+    const opacityImg = document.getElementById("opacity-img");
+    const hideOnHover = document.querySelectorAll(".hide-on-hover");
+    const showOnHover = document.querySelectorAll(".show-on-hover");
+
+    hoverImg.addEventListener("mouseover", () => {
+      hoverImg.style.opacity = 0;
+      opacityImg.style.opacity = 1;
+      hideOnHover.forEach(function (element) {
+        element.style.opacity = 0;
+      });
+      showOnHover.forEach(function (element) {
+        element.style.opacity = 1;
+      });
+    });
+
+    hoverImg.addEventListener("mouseout", () => {
+      hoverImg.style.opacity = 1;
+      opacityImg.style.opacity = 0;
+      hideOnHover.forEach(function (element) {
+        element.style.opacity = 1;
+      });
+      showOnHover.forEach(function (element) {
+        element.style.opacity = 0;
+      });
+    });
+  });
+</script>

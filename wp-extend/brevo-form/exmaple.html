@@ -1,0 +1,75 @@
+<style>
+  .landing-page-brevo-form input {
+    font-size: 0.65em;
+
+    border: 1px solid #000 !important;
+    border-radius: 8px;
+    font-family: Poppins;
+    font-weight: 400;
+    padding: 1.2em 2em;
+  }
+  .landing-page-brevo-form {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+  #landing-page-brevo-form-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #landing-page-brevo-form-submit .sib-default-btn {
+    background-color: #255cd9;
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 0.6em;
+    letter-spacing: 0.2em;
+    color: white;
+    border-radius: 4px;
+    width: 20em;
+    padding: 1em 1em;
+  }
+
+  .sib_signup_form .landing-page-brevo-form-accept-terms {
+    margin: 0.5em 1em;
+    color: black;
+    font-size: 0.75em;
+  }
+  .sib_signup_form .landing-page-brevo-form-accept-terms a {
+    color: #255cd9;
+  }
+</style>
+
+<div class="landing-page-brevo-form">
+  <input
+    type="text"
+    placeholder="what's your name?"
+    class="sib-NAME-area"
+    name="NAME"
+    required="required"
+  />
+
+  <input
+    type="email"
+    placeholder="what's your email?"
+    class="sib-email-area"
+    name="email"
+    required="required"
+  />
+</div>
+<div class="landing-page-brevo-form-accept-terms">
+  <input type="checkbox" name="terms" required="required" /> I agree to receive
+  daily emails with the most important news and tools in the field of Artificial
+  Intelligence (AI) provided by Brevo. I accept the
+  <span><a href="https://the-aiatlas.com/datenschutz/">Privacy Policy</a></span>
+  as well as
+  <span
+    ><a href="https://www.brevo.com/legal/privacypolicy/"
+      >Brevo's Privacy Policy</a
+    ></span
+  >. I understand that I can withdraw my consent at any time by using the
+  unsubscribe link included in every email.
+</div>
+<div id="landing-page-brevo-form-submit">
+  <input type="submit" class="sib-default-btn" value="Secure Your Spot" />
+</div>

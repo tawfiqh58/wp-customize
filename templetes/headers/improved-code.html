@@ -1,0 +1,40 @@
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var headerHeight = document.getElementById("sticky-header").offsetHeight;
+
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+
+    if (currentScrollPos > headerHeight) {
+      if (prevScrollpos > currentScrollPos) {
+        document
+          .getElementById("sticky-header")
+          .classList.remove("hidden-header");
+      } else {
+        document.getElementById("sticky-header").classList.add("hidden-header");
+      }
+    } else {
+      document
+        .getElementById("sticky-header")
+        .classList.remove("hidden-header");
+    }
+
+    prevScrollpos = currentScrollPos;
+  };
+</script>
+<style>
+  .hidden-header {
+    top: -7em !important;
+  }
+  @media screen and (min-width: 767px) {
+    .elementor-location-header {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+  }
+  #sticky-header {
+    transition: top 0.4s ease-in-out;
+  }
+</style>

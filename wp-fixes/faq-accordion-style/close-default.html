@@ -1,0 +1,32 @@
+<style class="accordion-closed-on-load">
+  body:not(.elementor-editor-active)
+    .elementor-widget-accordion
+    .elementor-tab-content {
+    display: none !important;
+  }
+</style>
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      document.querySelector(".accordion-closed-on-load").remove();
+      let accordionsElems = document.querySelectorAll(
+        ".elementor-widget-accordion"
+      );
+      accordionsElems.forEach((e) => {
+        let activeTitle = e.querySelector(
+          ".elementor-tab-title.elementor-active"
+        );
+        let activeContent = e.querySelector(
+          ".elementor-tab-content.elementor-active"
+        );
+        jQuery(activeContent).hide();
+        activeTitle.classList.remove("elementor-active");
+        activeContent.classList.remove("elementor-active");
+        activeContent.setAttribute("hidden", "hidden");
+        activeTitle.setAttribute("aria-expanded", false);
+        activeTitle.setAttribute("aria-selected", false);
+        activeTitle.setAttribute("tabindex", -1);
+      });
+    }, 100);
+  });
+</script>

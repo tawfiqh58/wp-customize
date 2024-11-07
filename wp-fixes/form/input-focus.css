@@ -1,0 +1,58 @@
+:focus-visible {
+    outline-offset: -1px;
+    outline: 1px solid black;
+}
+
+
+selector form .elementor-field:focus {
+    box-shadow: none !important;
+}
+selector form input:focus-visible {
+    outline: none;
+}
+
+selector form input:-internal-autofill-selected {
+    background-color: transparent  !important;
+}
+#my-input form input:-internal-autofill-selected {
+    background-color: transparent  !important;
+    background: content-box !important;
+}
+/*input:not(:placeholder-shown) {*/
+/*    background-color: lightblue;*/
+/*}*/
+/*input:-webkit-autofill {*/
+/*    background-color: lightblue;*/
+/*}*/
+
+
+/* --- Example of Absolute button with container Background */
+selector div {
+    padding: 0;
+    margin: 0;
+}
+selector .wp-container-core-columns-layout-1 {
+    background-color: #252b2f;
+    border-radius: 8px;
+    padding: 0.2em;
+}
+selector  .wp-container-core-columns-layout-1 .wp-block-column:last-child {
+  position: absolute;
+  right: .2em;
+  width: 0;
+}
+selector .jet-form-builder__submit-wrap {
+    justify-content: end;
+}
+
+selector form input:focus-visible {
+    outline: none;
+}
+
+#my-input form input:-internal-autofill-selected {
+    background-color: transparent  !important;
+    background: content-box !important;
+}
+#my-input form input {
+    padding-right: 8em;
+}

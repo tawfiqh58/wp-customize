@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Prism</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scroll-container">
+      <div id="prism">
+        <div class="light"></div>
+      </div>
+      <div id="company-name">Dream Build Innovate</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+      // Scene setup
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      // Add prism shape (a cone for simplicity)
+      const geometry = new THREE.ConeGeometry(5, 10, 4); // A 4-sided cone to simulate a prism
+      const material = new THREE.MeshStandardMaterial({
+        color: 0x6ab3f8, // Light blue
+        emissive: 0x0000ff, // Start with a low emissive color
+        metalness: 0.5, // Simulate some reflective properties
+        roughness: 0.2, // Lower roughness for more shiny effect
+      });
+      const prism = new THREE.Mesh(geometry, material);
+      scene.add(prism);
+
+      // Add lights
+      const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+      pointLight.position.set(0, 20, 10); // Position light above and to the side
+      scene.add(pointLight);
+
+      const ambientLight = new THREE.AmbientLight(0x404040); // Soft ambient light
+      scene.add(ambientLight);
+
+      // Position the camera
+      camera.position.z = 20;
+
+      // Render loop
+      function animate() {
+        requestAnimationFrame(animate);
+        prism.rotation.y += 0.01; // Slowly rotate the prism
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Register ScrollTrigger plugin
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Scroll-triggered animation with GSAP
+      gsap.to(prism.material.emissive, {
+        r: 1,
+        g: 1,
+        b: 1, // Glow to full white on scroll
+        scrollTrigger: {
+          trigger: renderer.domElement,
+          start: "top center",
+          end: "bottom center",
+          scrub: true, // Smooth transition
+        },
+      });
+
+      // Reveal company name on scroll
+      gsap.to("#company-name", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: renderer.domElement,
+          start: "center center",
+          end: "bottom center",
+          scrub: true,
+        },
+        y: 0, // Move into view
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+
+okay, now I need to create a single reviews csv file from the 2 source csv one is from users and another is the old reviews. 
+i am providing the code, i just need to add the author id as the source_user_id from the users csv which user id will be matched otherwise leave it empty
+"import pandas as pd
+
+def convert_rating(rating):
+    return rating * 20
+
+df = pd.read_csv('reviews.csv')
+
+print("Initial data from CSV:")
+print(df.head())
+
+df['Review Type'] = df['Review Creation Date'].str.strip().str.lower()
+
+filtered_df = df[df['Review Type'] == 'product_review']
+
+print("\nFiltered data (only 'product_review'):")
+print(filtered_df.head())
+
+if filtered_df.empty:
+    print("\nNo data after filtering. Please check the 'Review Type' values in the input CSV.")
+else:
+    output_df = pd.DataFrame({
+        'source': 'post',
+        'post_type': 'product',
+        'post_id': filtered_df['Reviewer Device Type'],
+        'author': '',
+        'date': filtered_df['Review ID'],
+        'title': filtered_df['Review Score'],
+        'content': filtered_df['Review Title'],
+        'type_slug': '',
+        'rating_data': '',
+        'rating': filtered_df['Review Source'].apply(convert_rating),
+        'likes': filtered_df['Review Tags'],
+        'dislikes': filtered_df['Thumbs Up'],
+        'approved': 1,
+        'pinned': 0
+    })
+
+    output_file = 'output_for_jetreviews.csv'
+    output_df.to_csv(output_file, index=False)
+
+    print(f'\nThe transformed data has been saved to {output_file}')
+"
+
+"import pandas as pd
+
+users_df = pd.read_csv('users.csv')
+reviews_df = pd.read_csv('reviews.csv')
+
+matched_user_ids = []
+
+for index, review in reviews_df.iterrows():
+    reviewer_display_name = review['Pushed to Social']
+    reviewer_email = review['Reviewer Display Name']
+    
+    user_match = users_df[(users_df['display_name'] == reviewer_display_name) | (users_df['user_email'] == reviewer_email)]
+ 
+    if not user_match.empty:
+        user_id = user_match.iloc[0]['source_user_id']  # Assuming 'user_id' is the column name in users CSV
+        matched_user_ids.append({'Reviewer Display Name': reviewer_display_name, 'Reviewer Email': reviewer_email, 'User ID': user_id})
+    
+matched_user_ids_df = pd.DataFrame(matched_user_ids)

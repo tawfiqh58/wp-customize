@@ -1,0 +1,28 @@
+#square-menu .menu-item:before {
+  content: "";
+  opacity: 1;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+
+  position: absolute;
+  left: 0;
+  background-color: #c0392b;
+  width: 3.65em;
+  height: 3.65em;
+}
+
+#square-menu .menu-item:hover:before {
+  transform: translateX(3em);
+}
+
+@media screen and (max-width: 767px) {
+  #square-menu .menu-item:before {
+    width: 2.1em;
+    height: 2.1em;
+    top: 0.15em;
+  }
+
+  #square-menu .menu-item:hover:before {
+    transform: translateX(1.4em);
+  }
+}

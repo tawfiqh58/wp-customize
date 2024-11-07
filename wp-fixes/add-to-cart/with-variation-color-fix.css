@@ -1,0 +1,45 @@
+.woocommerce .quantity .qty {
+  width: 5em !important;
+  padding: 1.17em 0.2em;
+}
+
+selector .elementor-add-to-cart table .label {
+  padding: 0;
+}
+
+selector .elementor-add-to-cart table .value {
+  background: none;
+}
+
+selector .woocommerce-variation-add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: start !important;
+}
+
+selector .added_to_cart {
+  margin-left: 1em;
+  padding: 1em 1.5em;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+selector .available-on-backorder {
+  color: #111 !important;
+}
+
+selector .in-stock {
+  color: #000 !important;
+}
+
+selector .woocommerce-variation-price .price {
+  color: #111 !important;
+}
+
+selector .reset_variations {
+  color: #777;
+}
+
+selector .woocommerce-variation-price {
+  margin-bottom: 0.5rem;
+}

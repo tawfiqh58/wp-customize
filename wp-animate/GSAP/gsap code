@@ -1,0 +1,315 @@
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+
+// html
+<style>
+    .split-text-wrapper {
+        
+    }
+    .split-line {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow: hidden;
+        padding-left: 1em;
+        
+        color: var(--e-global-color-text);
+        font-family: "Crimson Text", Sans-serif;
+        font-size: 5em;
+        font-weight: 600;
+        line-height: 1em;
+        letter-spacing: -0.04em;
+    }
+    
+    .split-char {
+        display: block;
+        transform: rotate(10deg) translateY(100%);
+    }
+    
+    
+</style>
+<div class="split-text-wrapper">
+    <h1 class="split-line">
+        <div class='split-char'>E</div>
+        <div class='split-char'>a</div>
+        <div class='split-char'>s</div>
+        <div class='split-char'>y</div>
+        <div class='split-char'>,</div>
+        <div class='split-char'>&nbsp;</div>
+        <div class='split-char'>b</div>
+        <div class='split-char'>r</div>
+        <div class='split-char'>e</div>
+        <div class='split-char'>e</div>
+        <div class='split-char'>z</div>
+        <div class='split-char'>y</div>
+        <div class='split-char'>,</div>
+    </h1>
+    <h1 class="split-line">
+        <div class='split-char'>b</div>
+        <div class='split-char'>o</div>
+        <div class='split-char'>u</div>
+        <div class='split-char'>n</div>
+        <div class='split-char'>t</div>
+        <div class='split-char'>i</div>
+        <div class='split-char'>f</div>
+        <div class='split-char'>u</div>
+        <div class='split-char'>l</div>
+        <div class='split-char'>&nbsp;</div>
+        <div class='split-char'>c</div>
+        <div class='split-char'>o</div>
+        <div class='split-char'>v</div>
+        <div class='split-char'>e</div>
+        <div class='split-char'>r</div>
+        <div class='split-char'>a</div>
+        <div class='split-char'>g</div>
+        <div class='split-char'>e</div>
+    </h1>
+</div>
+
+<style>
+      .slick-image-reveal-wrapper {
+        position: relative;
+      }
+
+      .slick-image-reveal-wrapper .card-item .hover-reveal {
+        position: fixed;
+        width: 400px;
+        height: 250px;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 10;
+      }
+
+		.stagger-text h2,h1 {
+            font-size: 6rem;
+            line-height: 1;
+            margin-bottom: 0.15em;
+            font-weight: 500;
+            letter-spacing: 4px;
+            clip-path: inset(0px 0px 0px 0px);
+	}
+</style>
+
+<script>
+// Text reveal OnScroll
+if (document.querySelector('.reveal-container')) {
+	var revealText = new SplitType('.reveal-container .reveal-text', {
+		types: 'lines, words',
+	});
+	revealText.lines.forEach((target) => {
+		gsap.to(target, {
+			backgroundPositionX: 0,
+			ease: 'none',
+			scrollTrigger: {
+				trigger: target,
+				scrub: 1,
+				start: 'top center',
+				end: 'bottom center',
+			},
+		});
+	});
+}
+
+// Stagger TEXT
+if (document.querySelector('.stagger-text')) {
+	var staggerText = new SplitType('.stagger-text', {
+		types: 'chars'
+	});
+
+	gsap.from(staggerText.chars, {
+		y: 100,
+		rotation: 10,
+		stagger: 0.02,
+		ease: 'ease.inOut'
+	});
+}
+
+const splitChar = document.querySelectorAll('.split-char');
+if (splitChar.length > 0) {
+	gsap.to(splitChar, {
+		y: 0,
+		rotation: 0,
+		stagger: 0.04,
+		ease: 'ease.inOut'
+	});
+}
+	
+// Slick Hover Image Reveal
+jQuery(function ($) {
+	$(document).ready(function () {
+		SlickImageReveal();
+	});
+
+	function SlickImageReveal() {
+		if ($('.slick-image-reveal-wrapper').length > 0) {
+			if ($(window).width() >= 1024) {
+				const getMousePos = (e) => {
+					let posx = 0;
+					let posy = 0;
+					if (!e) e = window.event;
+					if (e.pageX || e.pageY) {
+						posx = e.pageX;
+						posy = e.pageY;
+					} else if (e.clientX || e.clientY) {
+						posx =
+							e.clientX +
+							document.body.scrollLeft +
+							document.documentElement.scrollLeft;
+						posy =
+							e.clientY +
+							document.body.scrollTop +
+							document.documentElement.scrollTop;
+					}
+					return {
+						x: posx,
+						y: posy,
+					};
+				};
+				class HoverImgFx1 {
+					constructor(el) {
+						this.DOM = {
+							el: el,
+						};
+						this.DOM.reveal = this.DOM.el.querySelector('.hover-reveal');
+						this.DOM.revealInner = this.DOM.reveal.querySelector(
+							'.hover-reveal__inner'
+						);
+						this.DOM.revealInner.style.overflow = 'hidden';
+						this.DOM.revealImg =
+							this.DOM.revealInner.querySelector('.hover-reveal__img');
+						this.initEvents();
+					}
+					initEvents() {
+						this.positionElement = (ev) => {
+							const mousePos = getMousePos(ev);
+							if ($('body').hasClass('smooth-scroll')) {
+								const docScrolls = {
+									left:
+										document.body.scrollLeft +
+										document.documentElement.scrollLeft,
+									top: -scrollbar.scrollTop,
+								};
+								gsap.to($('.hover-reveal'), {
+									duration: 1,
+									top: `${mousePos.y + 40 - docScrolls.top}px`,
+									left: `${mousePos.x + 10 - docScrolls.left}px`,
+									ease: Power4.easeOut,
+								});
+							} else {
+								const docScrolls = {
+									left:
+										document.body.scrollLeft +
+										document.documentElement.scrollLeft,
+									top:
+										document.body.scrollTop +
+										document.documentElement.scrollTop,
+								};
+								gsap.to($('.hover-reveal'), {
+									duration: 1,
+									top: `${mousePos.y + 40 - docScrolls.top}px`,
+									left: `${mousePos.x + 10 - docScrolls.left}px`,
+									ease: Power4.easeOut,
+								});
+							}
+						};
+						this.mouseenterFn = (ev) => {
+							this.positionElement(ev);
+							this.showImage();
+						};
+						this.mousemoveFn = (ev) =>
+							requestAnimationFrame(() => {
+								this.positionElement(ev);
+							});
+						this.mouseleaveFn = () => {
+							this.hideImage();
+						};
+						this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
+						this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
+						this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
+					}
+					showImage() {
+						gsap.killTweensOf(this.DOM.revealInner);
+						gsap.killTweensOf(this.DOM.revealImg);
+						this.tl = gsap
+							.timeline({
+								onStart: () => {
+									this.DOM.reveal.style.opacity = 1;
+									gsap.set(this.DOM.el, {
+										zIndex: 1000,
+									});
+								},
+							})
+							.add('begin')
+							.add(
+								gsap.to(this.DOM.revealInner, {
+									duration: 0.4,
+									ease: Sine.easeOut,
+									startAt: {
+										x: '-100%',
+									},
+									x: '0%',
+								}),
+								'begin'
+							)
+							.add(
+								gsap.to(this.DOM.revealImg, {
+									duration: 0.4,
+									ease: Sine.easeOut,
+									startAt: {
+										x: '100%',
+									},
+									x: '0%',
+								}),
+								'begin'
+							);
+					}
+					hideImage() {
+						gsap.killTweensOf(this.DOM.revealInner);
+						gsap.killTweensOf(this.DOM.revealImg);
+						this.tl = gsap
+							.timeline({
+								onStart: () => {
+									gsap.set(this.DOM.el, {
+										zIndex: 999,
+									});
+								},
+								onComplete: () => {
+									gsap.set(this.DOM.el, {
+										zIndex: '',
+									});
+									gsap.set(this.DOM.reveal, {
+										opacity: 0,
+									});
+								},
+							})
+							.add('begin')
+							.add(
+								gsap.to(this.DOM.revealInner, {
+									duration: 0.4,
+									ease: Sine.easeOut,
+									x: '100%',
+								}),
+								'begin'
+							)
+							.add(
+								gsap.to(this.DOM.revealImg, {
+									duration: 0.4,
+									ease: Sine.easeOut,
+									x: '-100%',
+								}),
+								'begin'
+							);
+					}
+				}
+				if ($('.slick-image-reveal-wrapper .card-item').length > 0) {
+					Array.from(
+						document.querySelectorAll('.slick-image-reveal-wrapper .card-item')
+					).forEach((link) => new HoverImgFx1(link));
+				}
+			}
+		}
+	}
+});
+</script>

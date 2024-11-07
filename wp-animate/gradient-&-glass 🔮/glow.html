@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .section {
+            overflow: hidden;
+        }
+      body {
+        margin: 0;
+        background-color: #000;
+      }
+
+      .glow-div {
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px #f0f, 0 0 140px 90px #0ff;
+      }
+      .card {
+            backdrop-filter: blur(16px) saturate(200%);
+            -webkit-backdrop-filter: blur(16px) saturate(200%);
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            border: 1px solid rgba(209, 213, 219, 0.3);
+        }
+        .card {
+            height: 100vh;
+            width: 100vw;
+            }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+
+        <div class="glow-div"></div>
+        <div class="card"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+.item--count.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pxl-blog-grid-layout1 .item--count {
+  margin: 3px 0 15px;
+  color: var(--fourth-color);
+  mix-blend-mode: exclusion;
+  -webkit-transition: all 400ms ease;
+  -khtml-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.pxl-blog-grid-layout1 .item--count.hide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.pxl-blog-grid-layout1 .item--count.deactive {
+  font-size: 0;
+}
+.pxl-blog-grid-layout1 .pxl-item--inner:hover .item--count {
+  font-size: 72px;
+}

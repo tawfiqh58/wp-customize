@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      article {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .article-wrap {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        padding: 40px 0;
+        opacity: 0;
+        -webkit-transition: translateY(220px);
+        transform: translateY(220px);
+        -webkit-transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+          opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+          opacity 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      .active .article-wrap {
+        opacity: 1;
+        -webkit-transition: translateY(0);
+        transform: translateY(0);
+      }
+
+      .article-content {
+        display: block;
+        position: relative;
+      }
+
+      .article-content::after {
+        clear: both;
+        content: ' ';
+        display: table;
+      }
+
+      article .hover-reveal {
+        position: relative;
+        width: 100%;
+        height: auto;
+        pointer-events: initial;
+        opacity: 1;
+      }
+
+      article .post-title {
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 64px;
+        -ms-word-wrap: break-word;
+        word-wrap: break-word;
+        text-align: left;
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      .entry-meta {
+        overflow: hidden;
+      }
+
+      .entry-meta:hover::after {
+        opacity: 1;
+      }
+
+      .entry-meta a {
+        color: #000;
+        display: inline-block;
+        overflow: hidden;
+        opacity: 0.75;
+      }
+
+      .entry-meta a:hover {
+        opacity: 1;
+      }
+
+      .entry-meta a span {
+        position: relative;
+        display: block;
+        -webkit-transition: -webkit-transform 0.2s;
+        transition: transform 0.2s;
+        transform-origin: 100% 0%;
+      }
+
+      .entry-meta a span::before {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        content: attr(data-hover);
+      }
+
+      .entry-meta:hover a span {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        transform-origin: 0% 0%;
+      }
+
+      #blog-effects {
+        position: relative;
+        z-index: 15;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        padding-top: 40px;
+        margin: 0 auto;
+      }
+
+      article {
+        pointer-events: none;
+      }
+
+      article .article-content {
+        pointer-events: initial;
+      }
+
+      #blog-effects article-wrap {
+        border-bottom: 1px solid rgba(0, 0, 0, 0);
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out;
+        -webkit-transition: border-color 0.3s ease-in-out 0s;
+        transition: border-color 0.3s ease-in-out 0s;
+      }
+
+      #blog-effects .show-borders .article-wrap {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      #blog-effects .article-wrap::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: rgba(0, 0, 0, 1);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      #blog-effects .article-wrap:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      #blog-effects article .hover-reveal {
+        position: fixed;
+        width: 400px;
+        height: 250px;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 10;
+      }
+
+      .article-wrap {
+        box-sizing: border-box;
+        padding: 50px 0;
+      }
+
+      .article-content {
+        text-align: left;
+      }
+
+      article .post-title {
+        width: 60%;
+        float: left;
+        font-family: 'Canela-Regular';
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 52px;
+        padding-right: 40px;
+      }
+
+      article .entry-date {
+        width: 35%;
+        float: left;
+        text-align: left;
+        margin: 0;
+      }
+
+      @media only screen and (max-width: 1024px) {
+        #blog-effects article .hover-reveal {
+          position: relative;
+          width: 100%;
+          height: auto;
+          pointer-events: none;
+          padding-top: 50px;
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="blog-effects">
+      <article class="has-post-thumbnail active show-borders">
+        <div class="hover-reveal">
+          <div class="hover-reveal__inner">
+            <div class="hover-reveal__img">
+              <img
+                decoding="async"
+                src="https://likelode.com/wp-content/uploads/2024/01/xmedia-highlight.jpg"
+                alt="X Media"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="article-wrap">
+          <div class="article-content">
+            <a
+              class="post-title"
+              href="https://likelode.com/portfolio/xmedia/"
+              target="_self"
+              >X Media</a
+            >
+            <div class="entry-meta">
+              <a href="https://likelode.com/portfolio/xmedia/" target="_self"
+                ><span data-hover="Strategy, Brand Identity, Website"
+                  >Strategy, Brand Identity, Website</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

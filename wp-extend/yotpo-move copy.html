@@ -1,0 +1,51 @@
+<style>
+  .woocommerce-tabs h2heading:last-of-type {
+    visibility: hidden;
+  }
+</style>
+<script>
+  const targetLocation = document.getElementById('yotpo-set-container');
+
+  function moveYotpoReview(yotpoWidget) {
+    if (yotpoWidget) {
+      if (targetLocation) {
+        const currentParent = yotpoWidget.parentElement;
+        if (currentParent) {
+          currentParent.removeChild(yotpoWidget);
+        }
+
+        targetLocation.appendChild(yotpoWidget);
+
+        //     var h2headings = document.querySelectorAll('.woocommerce-tabs h2heading');
+        // if (h2headings.length > 0) {
+        //     h2headings[h2headings.length - 1].style.display = 'none';
+        // }
+      } else {
+        console.error('Target location element not found.');
+      }
+
+      clearTimeout(checkTimer);
+      console.error('Yotpo review widget element not found.');
+    }
+  }
+
+  let checkTimer;
+
+  function checkForWidget() {
+    const yotpoWidget = document.querySelector('.yotpo-main-widget');
+
+    if (yotpoWidget) {
+      moveYotpoReview(yotpoWidget);
+    } else {
+      checkTimer = setTimeout(checkForWidget, 1000);
+    }
+  }
+
+  setTimeout(checkForWidget, 2000);
+
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log(
+      'Page loaded. Yotpo review will be moved when found (after a delay, retrying if necessary).'
+    );
+  });
+</script>

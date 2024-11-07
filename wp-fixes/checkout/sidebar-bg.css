@@ -1,0 +1,24 @@
+selector .e-checkout__column-end {
+  background-color: #08367a;
+  padding: 2.5em;
+  border-radius: 2em;
+}
+
+selector .woocommerce-info {
+  margin-bottom: 0;
+}
+
+selector .e-apply-coupon {
+  border-radius: 1000px !important;
+  border: 1px solid transparent !important;
+}
+
+selector .e-checkout__container {
+  display: grid;
+  align-items: start;
+  grid-column-gap: 1em;
+}
+selector .e-checkout__column {
+  flex-grow: 1;
+  width: 100%;
+}

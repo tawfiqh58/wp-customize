@@ -1,0 +1,68 @@
+<style>
+    .tab-header {
+        cursor: pointer;
+    }
+    .tab-content {
+    overflow: hidden;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+.tab-content.active {
+    max-height: 2000px;
+    padding-top: 3em;
+    padding-bottom: 5em;
+}
+
+.tab-images {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+    }
+    .tab-images.active {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.5s ease;
+    }
+</style>
+<script>
+
+ document.addEventListener('DOMContentLoaded', function () {
+    const headerSections = document.querySelectorAll('.tab-header');
+    const images = document.querySelectorAll('.tab-images');
+    const defaultImage = document.querySelector('#img-tab');
+    
+    function showImage(imageId) {
+        images.forEach(image => {
+            image.classList.remove('active');
+        });
+        const imageToShow = document.querySelector(`#${imageId}`);
+        if (imageToShow) {
+            imageToShow.classList.add('active');
+        }
+    }
+    headerSections.forEach(header => {
+        
+        header.addEventListener('click', function () {
+            const target = this.getAttribute('data-target');
+            const contentSection = document.querySelector(`.tab-content[data-content="${target}"]`);
+            
+            
+            if(contentSection){
+                contentSection.classList.toggle('active');
+            }
+            
+            
+        });
+        header.addEventListener('mouseover', function () {
+            const target = this.getAttribute('data-target');
+            showImage("img-"+target);
+        });
+
+        header.addEventListener('mouseout', function () {
+            showImage(defaultImage.id);
+        });
+    });
+});  
+</script>

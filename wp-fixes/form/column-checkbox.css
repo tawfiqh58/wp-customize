@@ -1,0 +1,17 @@
+selector .jet-form-builder__field-label.for-checkbox span {
+  display: flex;
+  align-items: start;
+}
+
+selector a {
+  color: #444;
+  text-decoration: underline;
+}
+
+selector .jet-form-builder__field-label p {
+  margin: 0;
+}
+
+selector .checkboxes-wrap {
+  margin: 0;
+}

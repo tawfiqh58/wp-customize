@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #progress-bar-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #ccc;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background-color: #4caf50;
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image 1"></div>
+            <div class="swiper-slide"><img src="https://images.pexels.com/photos/3188623/pexels-photo-3188623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image 2"></div>
+            <div class="swiper-slide"><img src="https://images.pexels.com/photos/3056574/pexels-photo-3056574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image 3"></div>
+            <!-- Add more slides as needed -->
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            on: {
+                slideChange: function () {
+                    updateProgressBar();
+                },
+            },
+        });
+
+        const progressBar = document.getElementById('progress-bar');
+
+        function updateProgressBar() {
+            const progress = (mySwiper.activeIndex / (mySwiper.slides.length - 1)) * 100;
+            progressBar.style.width = progress + '%';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+/* Take a widget and height width less the the above widget match color and add css class name*/
+.water-drop {
+    -webkit-animation: op 2s ease infinite,tr 2s ease-out infinite;
+    animation: op 2s ease infinite,tr 2s ease-out infinite
+}
+
+@-webkit-keyframes op {
+    from {
+        opacity: .85
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes op {
+    from {
+        opacity: .85
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes tr {
+    from {
+        transform: scaleX(1) scaleY(1)
+    }
+
+    to {
+        transform: scaleX(1.5) scaleY(1.5)
+    }
+}
+
+@keyframes tr {
+    from {
+        transform: scaleX(1) scaleY(1)
+    }
+
+    to {
+        transform: scaleX(1.5) scaleY(1.5)
+    }
+}

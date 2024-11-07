@@ -1,0 +1,21 @@
+selector {
+  position: relative;
+}
+selector .p-image {
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+selector:hover .p-image {
+  transform: translateY(100%);
+}
+selector .p-hover-image {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+selector:hover .p-hover-image {
+  transform: translateY(0%);
+}

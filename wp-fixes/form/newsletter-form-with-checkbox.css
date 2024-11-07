@@ -1,0 +1,51 @@
+selector .field-type-submit-field button:after {
+  content: "\f061";
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  top: 0.4rem;
+  bottom: auto;
+  right: 0.8rem;
+  left: auto;
+  display: inline-block;
+  font-weight: 900;
+  color: #fff;
+  font-size: 0.75rem;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+selector .field-type-submit-field button {
+  position: absolute;
+}
+
+selector .wp-container-core-columns-is-layout-2,
+selector .wp-container-core-columns-is-layout-1 {
+  border-bottom: 1px solid #222;
+  border-radius: 0;
+  margin: 0;
+  gap: 0;
+  justify-content: space-between;
+  flex-wrap: nowrap !important;
+}
+
+selector input:focus-visible,
+selector input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+selector a {
+  color: #a9a7b0;
+  text-decoration: underline;
+}
+
+selector .jet-form-builder__field-label.for-checkbox span {
+  display: flex;
+  align-items: start;
+}
+
+selector .jet-form-builder__field-label.for-checkbox span::before {
+  margin-top: 0.1em;
+}

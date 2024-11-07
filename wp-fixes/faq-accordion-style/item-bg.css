@@ -1,0 +1,10 @@
+selector .elementor-accordion-item {
+  background-color: #f5f2f0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* content only has padding top 1em
+nothing else 
+*/

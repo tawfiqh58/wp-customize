@@ -1,0 +1,32 @@
+
+    <style>
+      .pin-image.active {
+        opacity: 1;
+      }
+    </style>
+  
+    
+
+    <script>
+      const pinContentDivs = document.querySelectorAll(".pin-content-div");
+      const pinImages = document.querySelectorAll(".pin-image");
+
+      function imageContentVisibility() {
+        pinContentDivs.forEach((div, index) => {
+          const divRect = div.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+
+          if (
+            divRect.top + divRect.height / 2 >= 0 &&
+            divRect.top + divRect.height / 2 <= viewportHeight
+          ) {
+            pinImages.forEach((img) => img.classList.remove("active"));
+            pinImages[index].classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", imageContentVisibility);
+      imageContentVisibility();
+    </script>
+ 

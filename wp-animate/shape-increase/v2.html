@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+    }
+
+    .rounded-shape {
+      width: 50px; /* Initial width of the rounded shape */
+      height: 50px; /* Initial height of the rounded shape */
+      background-color: #3498db;
+      border-radius: 50%; /* Create a rounded shape */
+      position: fixed;
+      bottom: 20px; /* Adjust the distance from the bottom as needed */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Center horizontally */
+      transition: width 0.5s ease, height 0.5s ease;
+    }
+  </style>
+  <title>Scroll Trigger</title>
+</head>
+<body>
+  <div style="height: 1000px;"></div>
+  <div class="rounded-shape" id="roundedShape"></div>
+  <div style="height: 1000px;"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const roundedShape = document.getElementById("roundedShape");
+
+      window.addEventListener("scroll", function () {
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        const scaleFactor =  1 + scrollPosition / 100;
+        const newWidth = 50 + scaleFactor * 100;
+        const newHeight = 50 + scaleFactor  * 100;
+
+        roundedShape.style.width = newWidth + "px";
+        roundedShape.style.height = newHeight + "px";
+      });
+    });
+  </script>
+</body>
+</html>

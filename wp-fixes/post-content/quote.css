@@ -1,0 +1,9 @@
+selector blockquote {
+  background: #eff8ff url(/wp-content/uploads/2024/09/icon-blockquote.svg)
+    no-repeat 1.5rem 1.8rem;
+  background-size: 2.4rem;
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem 5rem;
+  margin: 0;
+  margin-bottom: 1.5rem;
+}

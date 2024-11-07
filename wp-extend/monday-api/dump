@@ -1,0 +1,26 @@
+function monday_api_post_submit($record) {
+    $api_key = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjMwMjAwNjM4NywiYWFpIjoxMSwidWlkIjo1MzAzODUyNCwiaWFkIjoiMjAyMy0xMi0xMVQxNDozMzo0Ny4zNTVaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjAyMzcyNDAsInJnbiI6ImV1YzEifQ.5uAbjJhu2OicO5hzOWBekwOmf1JTdZ5c9cyRLtWtubY';
+    $board_id = '1340625163';
+    $url = 'https://api.monday.com/v2';
+
+    $query = 'mutation { create_item (board_id: ' . $board_id . ', item_name: "' . $record['name'] . '", column_values: "{\"email\": \"' . $record['email'] . '\", \"language\": \"' . $record['language'] . '\", \"start_time\": \"' . $record['start_time'] . '\", \"license_type\": \"' . $record['license_type'] . '\", \"address\": \"' . $record['address'] . '\", \"terms\": \"' . $record['terms'] . '\"}") { id } }';
+	
+    $args = array(
+        'headers' => array(
+            'Authorization' => $api_key,
+            'Content-Type' => 'application/json'
+        ),
+        'body' => json_encode( array(
+            'query' => $query
+        ) )
+    );
+
+    $response = wp_remote_post( $url, $args );
+
+    if ( is_wp_error( $response ) ) {
+        error_log( $response->get_error_message() );
+    } else {
+        error_log( 'Data submitted successfully.' );
+    }
+}
+add_action('jet-form-builder/custom-action/monday-api', 'monday_api_post_submit');

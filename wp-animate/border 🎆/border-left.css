@@ -1,0 +1,20 @@
+
+selector:before {
+    content: '';
+    top: 50%;
+    transform: translatey(-50%);
+    background-color: #AB003D;
+    -webkit-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -khtml-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -moz-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -ms-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    height: 0;
+    width: .3em;
+    border: none;
+  }
+  
+  selector:hover:before {
+      height: 100%;
+  }

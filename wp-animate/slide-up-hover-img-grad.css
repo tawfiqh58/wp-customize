@@ -1,0 +1,48 @@
+selector:hover .hover-img {
+  transform: scale(1.1);
+}
+
+.hover-img {
+  transform: scale(1.01);
+  transition: transform 0.4s ease;
+}
+
+selector:hover .slide-anim {
+  padding-bottom: 1em;
+  opacity: 1;
+}
+
+.slide-anim {
+  opacity: 0;
+  padding-bottom: 0em;
+  transition: all 0.4s ease;
+}
+
+selector:hover .slide-adjuster {
+  padding-bottom: 0em;
+}
+
+.slide-adjuster {
+  padding-bottom: 1em;
+  transition: all 0.4s ease;
+}
+
+selector:hover .show-on-hover {
+  opacity: 1;
+}
+
+.show-on-hover {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+selector:hover .hover-gradient {
+  transform: translateY(-10%);
+  opacity: 1;
+}
+
+.hover-gradient {
+  transform: translateY(10%);
+  opacity: 0;
+  transition: all 0.4s ease;
+}

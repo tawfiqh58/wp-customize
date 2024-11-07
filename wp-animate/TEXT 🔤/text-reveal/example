@@ -1,0 +1,65 @@
+https://codepen.io/tmrDevelops/pen/vOPZBv
+https://webflow.com/made-in-webflow/website/gsap-text-scroll-reveal
+
+<!-- Your text element here. For example: -->
+<div class="split-word">Your text goes here</div>
+
+<style>
+.word {
+  position: relative;
+}
+.line-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #0d0d0d;
+  opacity: 0.8;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+
+<script>
+let typeSplit;
+
+// Split the text up
+function runSplit() {
+  typeSplit = new SplitType(".split-word", {
+    types: "lines, words"
+  });
+  $(".word").append("<div class='line-mask'></div>");
+  createAnimation();
+}
+
+runSplit();
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
+
+// Create staggered animation
+function createAnimation() {
+  let allMasks = $(".word").map(function() {
+    return $(this).find(".line-mask");
+  }).get();
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".split-word",
+      start: "top center",
+      end: "bottom center",
+      scrub: 1
+    }
+  });
+
+  tl.to(allMasks, {
+    width: "0%",
+    duration: 1,
+    stagger: 0.5
+  });
+}
+</script>

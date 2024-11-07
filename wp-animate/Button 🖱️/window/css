@@ -1,0 +1,42 @@
+selector .elementor-button .elementor-button-text {
+    z-index: 2;
+    transition: all 0.3s ease;
+    color: #000;
+}
+selector .elementor-button {
+    position: relative;
+    transition: color 0.2s ease-in-out;
+    background-color: #fff !important;
+}
+
+selector .elementor-button:before, selector .elementor-button:after {
+    content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: var( --e-global-color-accent );
+  top: 0;
+  transition: all 0.3s ease;
+    
+}
+
+selector .elementor-button:before {
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+selector .elementor-button:after {
+  right: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+selector .elementor-button:hover .elementor-button-text {
+    color: #fff;
+}
+
+selector .elementor-button:hover:after, selector .elementor-button:hover:before {
+      
+      transform: scaleX(1);
+    }

@@ -1,0 +1,64 @@
+selector .elementor-widget-container > p:first-of-type::first-letter {
+  font-size: 30px;
+  line-height: 30px;
+  display: inline-block;
+  float: left;
+  font-weight: 500;
+  margin-right: 8px;
+  padding: 7px 10px;
+  width: 46px;
+  height: 46px;
+  color: var(--e-global-color-accent);
+  border: 1px solid #f2f2f2;
+}
+
+selector blockquote {
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1.4em;
+  margin: 2rem 0;
+  position: relative;
+  padding: 2rem 3rem 2rem 8rem;
+  font-weight: 500;
+  overflow: hidden;
+  border-left: 4px solid;
+  border-color: var(--e-global-color-primary);
+  color: var(--e-global-color-primary);
+  background: var(--e-global-color-9bb9468);
+}
+
+selector blockquote:before {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  content: "\f10d";
+  font-weight: 900;
+  font-size: 2.2rem;
+  left: 2.4rem;
+  top: 2.4rem;
+  z-index: 3;
+  color: var(--e-global-color-accent);
+  clear: black;
+}
+
+selector ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0.5em;
+}
+
+selector li {
+  padding-left: 2.2em;
+  position: relative;
+  list-style-type: none;
+  padding-bottom: 0.5em;
+}
+
+selector li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #a6a182;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+}

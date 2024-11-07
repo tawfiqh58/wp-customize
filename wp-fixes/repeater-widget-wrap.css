@@ -1,0 +1,11 @@
+/* Set 90vw of the widget on mobile */
+selector .jet-listing-dynamic-repeater__items  {
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+selector .jet-listing-dynamic-repeater__delimiter {
+    display: none;
+}
+
+/* font-size in rem */

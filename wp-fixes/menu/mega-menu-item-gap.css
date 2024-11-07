@@ -1,0 +1,6 @@
+selector .jet-mega-menu-item {
+    margin-bottom: 0 !important;
+}
+selector .jet-mega-menu-item .jet-mega-menu-item__inner {
+    padding: .2rem 1rem !important;
+}

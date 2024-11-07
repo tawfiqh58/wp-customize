@@ -1,0 +1,31 @@
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var headerHeight = document.getElementById("sticky-header").offsetHeight;
+
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+
+    if (currentScrollPos > headerHeight) {
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("sticky-header").style.top = "0";
+      } else {
+        document.getElementById("sticky-header").style.top = "-5em";
+      }
+    } else {
+      document.getElementById("sticky-header").style.top = "0";
+    }
+
+    prevScrollpos = currentScrollPos;
+  };
+</script>
+<style>
+  .elementor-location-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  #sticky-header {
+    transition: top 0.4s ease-in-out;
+  }
+</style>

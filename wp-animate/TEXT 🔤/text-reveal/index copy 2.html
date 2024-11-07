@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .reveal-container {
+        position: relative;
+
+        margin-top: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .reveal-text {
+        font-size: 3em;
+        position: relative;
+      }
+      .line {
+        position: relative;
+      }
+
+      .line-musk {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: black;
+        opacity: 0.65;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal-container">
+      <p class="reveal-text">
+        This is some text that will reveal word by word. This is some text that
+        will reveal word by word. This is some text that will reveal word by
+        word. This is some text that will reveal word by word.
+      </p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
+    <script>
+      var revealText;
+
+      function runSplit() {
+        revealText = new SplitType('.reveal-text', {
+          types: 'words, chars',
+        });
+        $('.reveal-text .word').append("<div class='line-musk'></div>");
+        runRevealText();
+      }
+      runSplit();
+
+      window.addEventListener('resize', function () {
+        revealText.revert();
+        runSplit();
+      });
+
+      function runRevealText() {
+        $('.reveal-text .word').each(function (index) {
+          let triggerElement = $(this);
+          let targetElement = $(this).find('.line-musk');
+
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: triggerElement,
+              start: 'top center',
+              end: 'bottom center',
+              scrub: 1,
+            },
+          });
+
+          tl.to(targetElement, {
+            width: '0%',
+            duration: 1,
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Header Toggle Test</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+}
+
+.your-header-class {
+  background-color: red;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.your-header-class.transparent {
+  background-color: green;
+  color: red;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dark-section {
+  background-color: #333;
+  color: white;
+}
+
+.white-section {
+  background-color: white;
+  color: black;
+}
+  </style>
+</head>
+<body>
+  <header class="your-header-class">
+    <h1>My Website</h1>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="white-section">
+    <h2>White Section</h2>
+    <p>Some content in the white section...</p>
+  </section>
+
+  <section class="dark-section">
+    <h2>Dark Section</h2>
+    <p>Some content in the dark section...</p>
+  </section>
+
+  <section class="white-section">
+    <h2>White Section</h2>
+    <p>Some content in the white section...</p>
+  </section>
+
+  <section class="dark-section">
+    <h2>Another Dark Section</h2>
+    <p>More content in a dark section...</p>
+  </section>
+  <section class="white-section">
+    <h2>White Section</h2>
+    <p>Some content in the white section...</p>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+const header = document.querySelector('.your-header-class');
+const darkSections = gsap.utils.toArray('.dark-section');
+
+darkSections.forEach(section => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top",
+    end: "bottom top",
+    onEnter: () => header.classList.add("transparent"),
+    onLeave: () => header.classList.remove("transparent"),
+    onLeaveBack: () => header.classList.remove("transparent"),
+    onEnterBack: () => header.classList.add("transparent"),
+    
+  });
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        .hero-marque-text {
+            color: #111111;
+    font-family: Sora, Arial, Helvetica, sans-serif;
+    font-size: 5.2em;
+    font-weight: 400;
+    line-height: 1em;
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+        }
+    </style>
+ <div class="owl-carousel owl-theme">
+    <div class="item">
+        <p class="hero-marque-text"> /AI the future of technology. </p>
+    </div>
+    <div class="item">
+        <p class="hero-marque-text">/AI the future of technology.</p>
+    </div>
+    <div class="item">
+        <p class="hero-marque-text">/AI the future of technology.</p>
+    </div>
+    <div class="item">
+        <p class="hero-marque-text">/AI the future of technology.</p>
+    </div>
+    
+    
+ </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
+    jQuery(document).ready(function() {
+      $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:0,
+        responsiveClass:true,
+        dots : false,       
+        nav:false,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        slideTransition: 'linear',
+        smartSpeed: 10000,
+        responsive:{
+            0:{
+                items:1,
+            },
+            400:{
+                items:1,
+            },
+            639:{
+                items:1,
+            },
+            1023:{
+                items:1,
+            },
+            1440: {
+                items:1,
+            },
+            1920 : {
+                items: 1
+            }
+        }
+    });
+    });
+  </script>

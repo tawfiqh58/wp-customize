@@ -1,0 +1,50 @@
+.font-div {
+  font-size: 1.25vw;
+}
+
+@media screen and (max-width: 767px) {
+  .font-div {
+    font-size: 4.26666666667vw;
+  }
+}
+
+body {
+  font-size: 1.25vw !important;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 4.26666666667vw !important;
+  }
+}
+
+/* Main Code & elementor content width 1920px*/
+<style > body,
+html {
+  font-size: 1.25vw !important;
+}
+
+@media screen and (max-width: 767px) {
+  body,
+  html {
+    font-size: 4.26666666667vw !important;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  body,
+  html {
+    font-size: 24px !important;
+  }
+}
+</style>
+/* 
+
+PAST IT TO SITE SETTINGS CUSTOM CSS
+AND ADD "font-div" as the classes to your sections
+*/
+
+.footer-list ul {
+  list-style-position: outside;
+  padding-left: 15px;
+}

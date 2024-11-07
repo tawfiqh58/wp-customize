@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+   
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      .swiper {
+        width: 450px;
+        height: 760px;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .slide-container {
+        position: relative;
+        width: 450px;
+        height: 760px;
+      }
+      .phone-cover {
+        position: absolute;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="slide-container">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Image 1"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Image 1"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Image 1"
+            />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <img class="phone-cover" src="https://gemyz.app/wp-content/uploads/2023/08/frame.png"/>
+    </div>
+    <!-- Swiper -->
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "progressbar",
+        },
+      });
+    </script>
+  </body>
+</html>

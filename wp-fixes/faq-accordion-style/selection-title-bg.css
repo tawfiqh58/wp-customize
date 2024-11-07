@@ -1,0 +1,13 @@
+selector .elementor-tab-title {
+  display: flex;
+  align-items: center;
+}
+selector .elementor-tab-title.elementor-active {
+  background-color: #ef7d00;
+  transition: all 0.3s ease;
+}
+
+selector .elementor-tab-title.elementor-active a {
+  transition: all 0.3s ease;
+  color: white !important;
+}

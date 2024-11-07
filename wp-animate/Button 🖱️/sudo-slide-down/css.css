@@ -1,0 +1,20 @@
+selector .elementor-button:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  content: "";
+  background-color: #1c1d20;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+section .elementor-button:hover {
+  color: #fff;
+  background-color: transparent;
+}
+selector .elementor-button:hover::after {
+  top: 0;
+  bottom: auto;
+  height: 100%;
+}

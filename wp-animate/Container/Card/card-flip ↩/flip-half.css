@@ -1,0 +1,62 @@
+.item--content {
+  position: absolute;
+  -webkit-transition: all 0.5s ease-in-out;
+  -khtml-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.item--content {
+  top: 50%;
+}
+
+.pxl-item--inner {
+  position: relative;
+}
+
+.item--content {
+  max-width: 300px;
+  padding: 40px 46px 46px;
+  background-color: var(--primary-color);
+}
+
+.item--content {
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: translateY(-50%) perspective(400px) rotateY(-90deg);
+  -khtml-transform: translateY(-50%) perspective(400px) rotateY(-90deg);
+  -moz-transform: translateY(-50%) perspective(400px) rotateY(-90deg);
+  -ms-transform: translateY(-50%) perspective(400px) rotateY(-90deg);
+  -o-transform: translateY(-50%) perspective(400px) rotateY(-90deg);
+
+  transform: translateY(-50%) perspective(400px) rotateY(-90deg);
+}
+
+.pxl-item--inner:hover .item--content {
+  -webkit-transform: translateY(-50%) perspective(250px) rotateY(0deg);
+  -khtml-transform: translateY(-50%) perspective(250px) rotateY(0deg);
+  -moz-transform: translateY(-50%) perspective(250px) rotateY(0deg);
+  -ms-transform: translateY(-50%) perspective(250px) rotateY(0deg);
+  -o-transform: translateY(-50%) perspective(250px) rotateY(0deg);
+  transform: translateY(-50%) perspective(250px) rotateY(0deg);
+}
+
+selector {
+  position: relative;
+}
+selector:hover .item--content {
+  transform: translateY(-50%) perspective(250px) rotateY(0deg);
+}
+.item--content {
+  position: absolute;
+  top: 50%;
+  transition: all 0.5s ease-in-out;
+  max-width: 300px;
+  padding: 40px 46px 46px;
+  background-color: black;
+  transform-origin: center;
+  transform: translateY(-50%) perspective(400px) rotateY(-90deg);
+}

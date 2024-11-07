@@ -1,0 +1,43 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const extendOnHover = document.querySelectorAll(".horiz-accordion");
+     
+  
+     
+       extendOnHover.forEach(function (element) {
+        element.addEventListener("mouseover", () => {
+          extendOnHover.forEach(function (el) {
+            el.classList.remove('active');
+          });
+          element.classList.add('active');
+        });
+        element.addEventListener("mouseout", () => {
+          element.classList.remove('active');
+        });
+      });
+  
+     
+    });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const extendOnHover = document.querySelectorAll(".horiz-accordion");
+   
+
+      extendOnHover[0].classList.add('active');
+      extendOnHover[0].querySelector('.hidden-content').style.display = 'block';
+      
+     extendOnHover.forEach(function (element) {
+      element.addEventListener("mouseover", () => {
+        extendOnHover.forEach(function (el) {
+          el.classList.remove('active');
+        });
+        element.classList.add('active');
+      });
+      element.addEventListener("mouseout", () => {
+        element.classList.remove('active');
+      });
+    });
+  });
+</script>

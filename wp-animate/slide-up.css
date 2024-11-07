@@ -1,0 +1,16 @@
+selector:hover .hover-push-arrow {
+    transform: translateX(50%)
+}
+
+.hover-push-arrow {
+    transition: transform .4s ease;
+}
+
+selector:hover .hover-push-up {
+    transform: translateY(-10%)
+}
+
+.hover-push-up {
+    transition: transform .4s ease;
+}
+

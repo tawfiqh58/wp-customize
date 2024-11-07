@@ -1,0 +1,33 @@
+selector p {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+selector p::before {
+    content: "";
+    position: absolute;
+    bottom: -0.06em;
+    left: 0;
+    width: 100%;
+    height: 0.04em;
+    background-color: grey;
+    z-index: 1;
+    transition: none;
+}
+
+selector p::after {
+    content: "";
+    position: absolute;
+    bottom: -0.06em;
+    left: 0;
+    width: 0;
+    height: 0.04em;
+    background-color: black;
+    z-index: 2; 
+    transition: width .3s ease-in;
+}
+
+selector p:hover::after {
+    width: 100%;
+}

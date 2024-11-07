@@ -1,0 +1,9 @@
+h2 {
+  transition: all 0.3s ease-in-out;
+}
+.effect-title1,
+.effect-title1_,
+.effect-title2,
+.effect-title2_ {
+  transition: all 0.3s ease-in-out;
+}

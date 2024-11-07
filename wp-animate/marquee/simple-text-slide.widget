@@ -1,0 +1,39 @@
+<style>
+    .sliding-text-wrapper {
+        white-space: nowrap;
+        gap: 1rem;
+    }
+    .sliding-text {
+        display: inline-block;
+    font-family: Sora, Arial, Helvetica, sans-serif;
+    
+        animation: text_move_left 20s linear infinite;
+    
+    font-size: 4.5rem;
+    }
+    
+    @media screen and (max-width: 767px) {
+  .sliding-text {
+      font-size: 2.8rem;
+      animation: text_move_left 20s linear infinite;
+  }
+}
+
+    @keyframes text_move_left {
+  from {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+</style>
+
+<div class="sliding-text-wrapper">
+    <div class="sliding-text">/ Artificial Intellegance in shaping the future of technology. </div>
+    <div class="sliding-text">/ Artificial Intellegance in shaping the future of technology. </div>
+</div>

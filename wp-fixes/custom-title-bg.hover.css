@@ -1,0 +1,12 @@
+selector h3 {
+    display: inline;
+    background-image: linear-gradient(#c1272d,#c1272d);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 2px;
+    will-change: auto;
+    transition: background-size .3s,color 150ms 150ms;
+}
+selector h3:hover {
+    background-size: 100% 100%;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .slick-image-reveal-wrapper {
+        position: relative;
+      }
+
+      .slick-image-reveal-wrapper .card-item .hover-reveal {
+        position: fixed;
+        width: 400px;
+        height: 250px;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slick-image-reveal-wrapper">
+      <div class="card-item">
+        <div class="hover-reveal">
+          <div class="hover-reveal__inner">
+            <div class="hover-reveal__img">
+              <img
+                decoding="async"
+                src="https://likelode.com/wp-content/uploads/2024/01/xmedia-highlight.jpg"
+                alt="X Media"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="content">Hover Image Animation</div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script>
+      jQuery(function ($) {
+        $(document).ready(function () {
+          SlickImageReveal();
+        });
+
+        function SlickImageReveal() {
+          if ($('.slick-image-reveal-wrapper').length > 0) {
+            if ($(window).width() >= 1024) {
+              const getMousePos = (e) => {
+                let posx = 0;
+                let posy = 0;
+                if (!e) e = window.event;
+                if (e.pageX || e.pageY) {
+                  posx = e.pageX;
+                  posy = e.pageY;
+                } else if (e.clientX || e.clientY) {
+                  posx =
+                    e.clientX +
+                    document.body.scrollLeft +
+                    document.documentElement.scrollLeft;
+                  posy =
+                    e.clientY +
+                    document.body.scrollTop +
+                    document.documentElement.scrollTop;
+                }
+                return {
+                  x: posx,
+                  y: posy,
+                };
+              };
+              class HoverImgFx1 {
+                constructor(el) {
+                  this.DOM = {
+                    el: el,
+                  };
+                  this.DOM.reveal = this.DOM.el.querySelector('.hover-reveal');
+                  this.DOM.revealInner = this.DOM.reveal.querySelector(
+                    '.hover-reveal__inner'
+                  );
+                  this.DOM.revealInner.style.overflow = 'hidden';
+                  this.DOM.revealImg =
+                    this.DOM.revealInner.querySelector('.hover-reveal__img');
+                  this.initEvents();
+                }
+                initEvents() {
+                  this.positionElement = (ev) => {
+                    const mousePos = getMousePos(ev);
+                    if ($('body').hasClass('smooth-scroll')) {
+                      const docScrolls = {
+                        left:
+                          document.body.scrollLeft +
+                          document.documentElement.scrollLeft,
+                        top: -scrollbar.scrollTop,
+                      };
+                      gsap.to($('.hover-reveal'), {
+                        duration: 1,
+                        top: `${mousePos.y + 40 - docScrolls.top}px`,
+                        left: `${mousePos.x + 10 - docScrolls.left}px`,
+                        ease: Power4.easeOut,
+                      });
+                    } else {
+                      const docScrolls = {
+                        left:
+                          document.body.scrollLeft +
+                          document.documentElement.scrollLeft,
+                        top:
+                          document.body.scrollTop +
+                          document.documentElement.scrollTop,
+                      };
+                      gsap.to($('.hover-reveal'), {
+                        duration: 1,
+                        top: `${mousePos.y + 40 - docScrolls.top}px`,
+                        left: `${mousePos.x + 10 - docScrolls.left}px`,
+                        ease: Power4.easeOut,
+                      });
+                    }
+                  };
+                  this.mouseenterFn = (ev) => {
+                    this.positionElement(ev);
+                    this.showImage();
+                  };
+                  this.mousemoveFn = (ev) =>
+                    requestAnimationFrame(() => {
+                      this.positionElement(ev);
+                    });
+                  this.mouseleaveFn = () => {
+                    this.hideImage();
+                  };
+                  this.DOM.el.addEventListener('mouseenter', this.mouseenterFn);
+                  this.DOM.el.addEventListener('mousemove', this.mousemoveFn);
+                  this.DOM.el.addEventListener('mouseleave', this.mouseleaveFn);
+                }
+                showImage() {
+                  gsap.killTweensOf(this.DOM.revealInner);
+                  gsap.killTweensOf(this.DOM.revealImg);
+                  this.tl = gsap
+                    .timeline({
+                      onStart: () => {
+                        this.DOM.reveal.style.opacity = 1;
+                        gsap.set(this.DOM.el, {
+                          zIndex: 1000,
+                        });
+                      },
+                    })
+                    .add('begin')
+                    .add(
+                      gsap.to(this.DOM.revealInner, {
+                        duration: 0.4,
+                        ease: Sine.easeOut,
+                        startAt: {
+                          x: '-100%',
+                        },
+                        x: '0%',
+                      }),
+                      'begin'
+                    )
+                    .add(
+                      gsap.to(this.DOM.revealImg, {
+                        duration: 0.4,
+                        ease: Sine.easeOut,
+                        startAt: {
+                          x: '100%',
+                        },
+                        x: '0%',
+                      }),
+                      'begin'
+                    );
+                }
+                hideImage() {
+                  gsap.killTweensOf(this.DOM.revealInner);
+                  gsap.killTweensOf(this.DOM.revealImg);
+                  this.tl = gsap
+                    .timeline({
+                      onStart: () => {
+                        gsap.set(this.DOM.el, {
+                          zIndex: 999,
+                        });
+                      },
+                      onComplete: () => {
+                        gsap.set(this.DOM.el, {
+                          zIndex: '',
+                        });
+                        gsap.set(this.DOM.reveal, {
+                          opacity: 0,
+                        });
+                      },
+                    })
+                    .add('begin')
+                    .add(
+                      gsap.to(this.DOM.revealInner, {
+                        duration: 0.4,
+                        ease: Sine.easeOut,
+                        x: '100%',
+                      }),
+                      'begin'
+                    )
+                    .add(
+                      gsap.to(this.DOM.revealImg, {
+                        duration: 0.4,
+                        ease: Sine.easeOut,
+                        x: '-100%',
+                      }),
+                      'begin'
+                    );
+                }
+              }
+              if ($('.slick-image-reveal-wrapper .card-item').length > 0) {
+                Array.from(
+                  document.querySelectorAll(
+                    '.slick-image-reveal-wrapper .card-item'
+                  )
+                ).forEach((link) => new HoverImgFx1(link));
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

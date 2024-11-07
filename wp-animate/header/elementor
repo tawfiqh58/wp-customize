@@ -1,0 +1,40 @@
+<style>
+.main-header .dark-header, main-header .light-header {
+    transform: opacity .3s ease;
+}
+    .main-header .dark-header {
+        opacity: 0;
+    }
+    .main-header .light-header {
+        opacity: 1;
+    }
+    .main-header.transparent .dark-header {
+        opacity: 1;
+    }
+    .main-header.transparent .light-header {
+        opacity: 0;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+const header = document.querySelector('.main-header');
+const darkSections = gsap.utils.toArray('.dark-section');
+
+darkSections.forEach(section => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top",
+    end: "bottom top",
+    onEnter: () => header.classList.add("transparent"),
+    onLeave: () => header.classList.remove("transparent"),
+    onLeaveBack: () => header.classList.remove("transparent"),
+    onEnterBack: () => header.classList.add("transparent"),
+    
+  });
+});
+
+  </script>

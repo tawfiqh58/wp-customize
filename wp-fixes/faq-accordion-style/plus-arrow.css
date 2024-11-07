@@ -1,0 +1,24 @@
+selector .elementor-accordion-icon {
+  transition: all 0.4s ease;
+  padding: 0.3rem;
+  border-radius: 2px;
+  min-height: 3rem;
+  min-width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+selector .elementor-accordion-icon-opened i::before,
+selector .elementor-accordion-icon-closed i::before {
+  font-size: 0.8rem !important;
+}
+
+selector .elementor-accordion-item:hover .elementor-accordion-icon {
+  background-color: #5e9f22 !important;
+  box-shadow: 0 10px 20px 0 rgba(94, 159, 34, 0.5);
+  color: #fff !important;
+}
+
+selector .elementor-accordion-item .elementor-tab-title {
+  border-bottom: 1px solid #e8e8e9;
+}

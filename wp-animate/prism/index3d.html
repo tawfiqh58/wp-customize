@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Prism</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 200vh; /* Creates enough space for scrolling */
+        background-color: #000; /* Dark background to enhance light effect */
+      }
+      canvas {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      #company-name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateY(100px); /* Initially offscreen */
+        color: white;
+        font-size: 3rem;
+        opacity: 0; /* Start hidden */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="company-name">Dream Build Innovate</div>
+
+    <script>
+      // Scene setup
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      // Prism geometry (4-sided cone for prism effect)
+      const geometry = new THREE.ConeGeometry(5, 10, 4);
+      const material = new THREE.MeshStandardMaterial({
+        color: 0x6ab3f8, // Light blue color
+        emissive: 0x0000ff, // Dim blue glow initially
+        metalness: 0.5,
+        roughness: 0.2,
+      });
+      const prism = new THREE.Mesh(geometry, material);
+      scene.add(prism);
+
+      // Light inside the prism to simulate emission
+      const emissionLight = new THREE.PointLight(0x6ab3f8, 0, 50); // Initially no intensity
+      prism.add(emissionLight); // Attach light to the prism
+
+      // Lighting
+      const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+      pointLight.position.set(0, 20, 10); // Above and to the side
+      scene.add(pointLight);
+
+      const ambientLight = new THREE.AmbientLight(0x404040); // Soft light
+      scene.add(ambientLight);
+
+      // Camera position
+      camera.position.z = 20;
+
+      // Animation loop
+      function animate() {
+        requestAnimationFrame(animate);
+        prism.rotation.y += 0.01; // Rotate the prism
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // GSAP ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Prism glow and scale effect on scroll
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: document.body,
+            start: "top top",
+            end: "bottom center",
+            scrub: true,
+          },
+        })
+        .to(prism.material.emissive, { r: 1, g: 1, b: 1 }) // Prism glows white
+        .to(prism.scale, { x: 1.5, y: 1.5, z: 1.5 }) // Prism scales up
+        .to(emissionLight, { intensity: 2 }, "-=0.5"); // Light inside the prism gets brighter
+
+      // Reveal company name when the prism starts glowing fully
+      gsap.to("#company-name", {
+        opacity: 1,
+        y: 0, // Move the name into view from below
+        scrollTrigger: {
+          trigger: document.body,
+          start: "top center", // Start revealing when prism is halfway glowing
+          end: "bottom center",
+          scrub: true,
+        },
+      });
+
+      // Handle window resizing
+      window.addEventListener("resize", () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    </script>
+  </body>
+</html>

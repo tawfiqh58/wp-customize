@@ -1,0 +1,56 @@
+selector .wp-container-core-columns-is-layout-1,
+.wp-container-core-columns-is-layout-2 {
+  margin: 0;
+  gap: 1em;
+}
+
+@media screen and (max-width: 767px) {
+  selector .wp-container-core-columns-is-layout-1,
+  .wp-container-core-columns-is-layout-2 {
+    gap: 0;
+  }
+}
+
+/* selector .wp-container-core-columns-layout-1,
+.wp-container-core-columns-layout-2 {
+  margin: 0;
+  gap: 1em;
+}
+
+@media screen and (max-width: 767px) {
+  selector .wp-container-core-columns-layout-1,
+  .wp-container-core-columns-layout-2 {
+    gap: 0;
+  }
+} */
+
+/* ---------- */
+
+selector .wp-container-core-columns-layout-1,
+.wp-container-core-columns-layout-2 {
+  margin: 0;
+  gap: 1em;
+}
+
+@media screen and (max-width: 767px) {
+  selector .wp-container-core-columns-layout-1,
+  .wp-container-core-columns-layout-2 {
+    gap: 0;
+  }
+}
+selector .jet-form-builder__field-label.for-checkbox span {
+  display: flex;
+  align-items: start;
+}
+
+.jet-form-builder__field-wrap.checkradio-wrap span {
+  flex-wrap: wrap;
+}
+
+selector .field-type-textarea-field {
+  margin: 0 !important;
+}
+
+selector .field-type-checkbox-field {
+  margin: 0 !important;
+}

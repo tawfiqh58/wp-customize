@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        position: relative;
+
+        margin-top: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Hide anything outside the reveal area */
+      }
+
+      .split-text {
+        font-size: 3em;
+        position: relative; /* For positioning the mask */
+      }
+      .reveal-text {
+        font-size: 3em;
+        position: relative; /* For positioning the mask */
+      }
+      .split-text::before {
+        content: attr(
+          data-text
+        ); /* Use the original text as the mask content */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #fff; /* Or your background color */
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="split-text">
+        This is some text that will reveal word by word. This is some text that
+        will reveal word by word. This is some text that will reveal word by
+        word. This is some text that will reveal word by word.
+      </p>
+    </div>
+    <div class="reveal-container">
+      <p class="reveal-text">
+        This is some text that will reveal word by word. This is some text that
+        will reveal word by word. This is some text that will reveal word by
+        word. This is some text that will reveal word by word.
+      </p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
+    <script>
+      // Initialize SplitText
+      const splitText = new SplitType('.split-text', { type: 'words' });
+
+      // GSAP Animation
+      gsap.set(splitText.words, {
+        y: '100%',
+        opacity: 0,
+      });
+
+      ScrollTrigger.create({
+        trigger: '.split-text',
+        start: 'top 80%', // Start when the text is 80% into view
+        end: 'bottom 20%', // End when the text is 20% from the bottom
+        onEnter: () => {
+          gsap.to(splitText.words, {
+            y: 0,
+            opacity: 1,
+            duration: 0.4,
+            stagger: 0.05,
+          });
+        },
+        onEnterBack: () => {
+          // Animate words back in on scrolling up
+          gsap.to(splitText.words, {
+            y: 0,
+            opacity: 1,
+            duration: 0.4,
+            stagger: 0.05,
+          });
+        },
+        onLeave: () => {
+          // Animate words out when scrolling past
+          gsap.to(splitText.words, {
+            y: '100%',
+            opacity: 0,
+            duration: 0.4,
+            stagger: 0.05,
+          });
+        },
+        onLeaveBack: () => {
+          // Animate words out in reverse when scrolling back past
+          gsap.to(splitText.words, {
+            y: '-100%',
+            opacity: 0,
+            duration: 0.4,
+            stagger: 0.05,
+          });
+        },
+      });
+    </script>
+    <script>
+      var revealText;
+      var containerElement = $('.reveal-container');
+      revealText = new SplitType('.reveal-text', {
+        types: 'words',
+      });
+      function debounce(func, timeout = 300) {
+        let timer;
+        return (...args) => {
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            func.apply(this, args);
+          }, timeout);
+        };
+      }
+      const resizeObserver = new ResizeObserver(
+        debounce(([entry]) => {
+          revealText.split();
+        }, 500)
+      );
+      resizeObserver.observe(containerElement);
+
+      gsap.from(revealText.chars, {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        stagger: { amount: 0.1 },
+      });
+    </script>
+  </body>
+</html>

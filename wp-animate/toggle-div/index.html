@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Infinite Toggle with Hover</title>
+    <style>
+      .wrapper {
+        width: 200px;
+        height: 100px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+
+      .show-on-hover {
+        display: none; /* Initially hidden */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="show-on-hover">This content toggles!</div>
+    </div>
+
+    <script>
+      const wrapper = document.querySelector('.wrapper');
+      const toggleDiv = document.querySelector('.show-on-hover');
+      let intervalId;
+
+      function toggleVisibility() {
+        toggleDiv.style.display =
+          toggleDiv.style.display === 'none' ? 'block' : 'none';
+      }
+
+      // interval loop
+      intervalId = setInterval(toggleVisibility, 10000); // 10 seconds
+
+      wrapper.addEventListener('mouseover', () => {
+        clearInterval(intervalId);
+        toggleDiv.style.display = 'block';
+      });
+
+      wrapper.addEventListener('mouseout', () => {
+        intervalId = setInterval(toggleVisibility, 10000); // Restart
+        toggleDiv.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>

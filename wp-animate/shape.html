@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Clip Path Example</title>
+    <style>
+      .clipped-div {
+        width: 300px;
+        height: 800px;
+        background-color: lightblue;
+        clip-path: url(#clipPathRightCurve);
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0">
+      <defs>
+        <clipPath
+          id="clipPathRightCurve"
+          clipPathUnits="objectBoundingBox"
+          transform="scale(0.0033 0.00125)"
+        >
+          <path
+            d="M50 804C24.7168 738.218 -16.8901 571.514 18.9475 430.954C63.7445 255.255 48.982 105.735 18.9475 -2"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <div class="clipped-div">
+      This `div` is clipped with a custom SVG clip path on the right side.
+    </div>
+  </body>
+</html>

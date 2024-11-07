@@ -1,0 +1,26 @@
+function display_filtered_results_range() {
+global $wp_query;
+
+$paged = max( 1, get_query_var('paged') );
+
+$posts_per_page = $wp_query->query_vars['posts_per_page'];
+
+$total_products = $wp_query->found_posts;
+
+$first_item = ( $posts_per_page * ( $paged - 1 ) ) + 1;
+$last_item = min( $total_products, $posts_per_page * $paged );
+
+if ( $total_products > 0 ) {
+echo "<p id='results-range'>Showing {$first_item}–{$last_item} of {$total_products} results</p>";
+} else {
+echo "<p id='results-range'>No products found.</p>";
+}
+}
+
+
+function display_filtered_results_range_shortcode() {
+ob_start();
+display_filtered_results_range();
+return ob_get_clean();
+}
+add_shortcode('filtered_results_range', 'display_filtered_results_range_shortcode');

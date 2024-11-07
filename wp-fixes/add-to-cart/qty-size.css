@@ -1,0 +1,25 @@
+.woocommerce .quantity .qty {
+    width: 5em !important;
+    padding: 1.17em .2em;
+    
+  }
+  
+  selector .elementor-add-to-cart table .label {
+      padding: 0;
+  }
+  
+  selector .elementor-add-to-cart table .value {
+      background: none;
+  }
+  
+  selector .woocommerce-variation-add-to-cart {
+      display: flex;
+      align-items: center;
+  }
+  
+  selector .added_to_cart {
+      margin-left: 1em;
+      padding: 1em 1.5em;
+      border: 1px solid;
+      border-radius: 3px;
+  }

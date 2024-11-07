@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.button-container {
+    position: relative;
+    margin-top: 50px; /* Adjust the margin as needed */
+}
+
+.apex-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.apex-button:before,
+.apex-button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 37px;
+    transition: border-color 0.4s ease, width 0.4s ease;
+}
+
+.apex-button:before {
+    border-color: #cb1a2b;
+}
+
+.apex-button:after {
+    border-color: #273147;
+    z-index: -1;
+    width: 100%;
+}
+
+.apex-button:hover:before,
+.apex-button:hover:after {
+    width: 100%;
+}
+.apex-button:before {
+    border-bottom-color: #cb1a2b !important;
+    transition: opacity .4s ease;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -51px;
+    width: 100%;
+    border-bottom: 100px solid #cb1a2b;
+    border-left: 37px solid transparent;
+    z-index: -1;
+    opacity: 1;
+}
+.apex-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -51px;
+    width: 100%;
+    border-bottom: 100px solid #273147;
+    border-left: 37px solid transparent;
+    z-index: -1;
+    opacity: 0;
+    </style>
+    <title>Apex Button</title>
+</head>
+<body>
+    <div class="button-container">
+        <button class="apex-button">Hover me</button>
+    </div>
+</body>
+</html>

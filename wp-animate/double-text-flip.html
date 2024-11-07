@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .double-flip-text {
+        overflow: hidden;
+
+        color: #000;
+        display: inline-block;
+        overflow: hidden;
+        opacity: 0.75;
+      }
+
+      .double-flip-text:hover {
+        opacity: 1;
+      }
+
+      .double-flip-text span {
+        position: relative;
+        display: block;
+        -webkit-transition: -webkit-transform 0.2s;
+        transition: transform 0.2s;
+        transform-origin: 100% 0%;
+      }
+
+      .double-flip-text span::before {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        content: attr(data-hover);
+      }
+
+      .double-flip-text:hover span {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        transform-origin: 0% 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="double-flip-text">
+      <span data-hover="Strategy, Brand Identity, Website"
+        >Strategy, Brand Identity, Website</span
+      >
+    </div>
+  </body>
+</html>

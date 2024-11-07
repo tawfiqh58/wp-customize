@@ -1,0 +1,34 @@
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var headerHeight = document.getElementById('sticky-header').offsetHeight;
+
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+
+    if (currentScrollPos > headerHeight) {
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById('sticky-header').style.top = '0';
+      } else {
+        document.getElementById('sticky-header').style.top = '-5em';
+      }
+    } else {
+      document.getElementById('sticky-header').style.top = '0';
+    }
+
+    prevScrollpos = currentScrollPos;
+  };
+</script>
+{{/*
+<script>
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById('sticky-header').style.top = '0';
+    } else {
+      document.getElementById('sticky-header').style.top = '-5em';
+    }
+    prevScrollpos = currentScrollPos;
+  };
+</script>
+*/}}

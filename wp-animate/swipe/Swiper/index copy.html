@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css"
+    />
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+      body {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+      .swiper-container {
+        width: 100%;
+        height: 100vh;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .swiper-slide:nth-child(1) {
+        background-image: url(https://picsum.photos/2048/1536/?image=976);
+      }
+
+      .swiper-slide:nth-child(2) {
+        background-image: url(https://picsum.photos/2048/1536/?image=1050);
+      }
+
+      .swiper-slide:nth-child(3) {
+        background-image: url(https://picsum.photos/2048/1536/?image=1039);
+      }
+
+      .swiper-slide:nth-child(4) {
+        background-image: url(https://picsum.photos/2048/1536/?image=1019);
+      }
+
+      .swiper-slide:nth-child(5) {
+        background-image: url(https://picsum.photos/2048/1536/?image=1015);
+      }
+
+      .swiper-slide:nth-child(6) {
+        background-image: url(https://picsum.photos/2048/1536/?image=999);
+      }
+
+      .swiper-slide:nth-child(7) {
+        background-image: url(https://picsum.photos/2048/1536/?image=976);
+      }
+
+      .swiper-slide:nth-child(8) {
+        background-image: url(https://picsum.photos/2048/1536/?image=944);
+      }
+
+      .swiper-slide:nth-child(9) {
+        background-image: url(https://picsum.photos/2048/1536/?image=884);
+      }
+
+      .swiper-slide:nth-child(10) {
+        background-image: url(https://picsum.photos/2048/1536/?image=883);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <script>
+      var swiper = new Swiper(".swiper-container", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+gsap.registerPlugin(ScrollTrigger);
+
+const header = document.querySelector('.your-header-class');
+const darkSections = gsap.utils.toArray('.dark-section');
+const lightSections = gsap.utils.toArray('.light-section');
+
+function setHeaderColor(color) {
+  gsap.to(header, {
+    backgroundColor: color === 'dark' ? 'black' : 'white',
+    color: color === 'dark' ? 'white' : 'black',
+    duration: 0.5,  // Adjust duration
+    ease: 'power1.inOut' 
+  });
+}
+
+darkSections.forEach(section => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top center", 
+    end: "bottom center",
+    onEnter: () => setHeaderColor('dark'),
+    onLeaveBack: () => setHeaderColor('light') 
+  });
+});
+
+lightSections.forEach(section => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top center",
+    end: "bottom center",
+    onEnter: () => setHeaderColor('light'),
+    onLeaveBack: () => setHeaderColor('dark') 
+  });
+});

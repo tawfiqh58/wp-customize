@@ -1,0 +1,29 @@
+.woocommerce-notices-wrapper .button.wc-forward {
+  font-family: var(--e-global-typography-accent-font-family), Sans-serif !important;
+  font-size: var(--e-global-typography-accent-font-size) !important;
+  font-weight: var(--e-global-typography-accent-font-weight) !important;
+  text-transform: var(--e-global-typography-accent-text-transform) !important;
+  line-height: var(--e-global-typography-accent-line-height) !important;
+  letter-spacing: var(--e-global-typography-accent-letter-spacing) !important;
+  border-style: none !important;
+  border-radius: 3px 3px 3px 3px !important;
+  padding: 1.1em 3em 1.1em 3em !important;
+  color: var(--e-global-color-secondary) !important;
+  background-color: var(--e-global-color-primary) !important;
+  border-color: var(--e-global-color-primary) !important;
+  transition: all 0.2s !important;
+}
+
+.woocommerce-notices-wrapper .button.wc-forward:hover {
+  background-color: transparent !important;
+  color: #111 !important;
+  border: 1px solid #111 !important;
+}
+
+.woocommerce-notices-wrapper .woocommerce-message {
+  border-top-color: #111 !important;
+}
+
+.woocommerce-notices-wrapper .woocommerce-message::before {
+  color: #111 !important;
+}

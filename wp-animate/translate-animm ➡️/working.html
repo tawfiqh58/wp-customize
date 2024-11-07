@@ -1,0 +1,44 @@
+<style>
+    .anim-container {
+      position: relative;
+      border: 1px solid red;
+    }
+
+    .slide-me-div {
+      transform: translateX(100%);
+      transition: width 0.5s ease;
+    }
+  </style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.querySelector(".anim-container");
+      const movingDiv = document.getElementById("slide-me");
+
+      window.addEventListener("scroll", function () {
+        const containerRect = container.getBoundingClientRect();
+
+        if (
+          containerRect.top <= window.innerHeight &&
+          containerRect.bottom >= 0
+        ) {
+          const scrollProgress =
+            Math.max(0, window.innerHeight - containerRect.top) /
+            window.innerHeight;
+          const _scrollSpeed = scrollProgress * 1.4;
+          const _progress = Math.max(0, _scrollSpeed * 100);
+          const newWidth = _progress > 100 ? 100 : _progress;
+
+          const newTransform = "translateX(" + (100 - newWidth) + "%)";
+          movingDiv.style.transform = newTransform;
+          movingDiv.style.opacity = newWidth + "%";
+        } else {
+          if (containerRect.top > window.innerHeight) {
+            movingDiv.style.width = "translateX(0%)";
+          } else {
+            movingDiv.style.width = "translateX(100%)";
+            movingDiv.style.opacity = 1;
+          }
+        }
+      });
+    });
+  </script>

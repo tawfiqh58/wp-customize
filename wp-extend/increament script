@@ -1,0 +1,34 @@
+// Add a html widget and add the css id and past this code
+<script>
+    jQuery(document).ready(function($) {
+
+  var initialDate = new Date('2023-11-15T00:00:00Z');
+  var immigrationIncrementRate = 1; // Increment 1 every 4 hours
+  var proudCitizensIncrementRate = 1; // Increment 1 every 6 hours
+
+  
+  var currentTime = new Date();
+  var timeDifferenceImmigration = Math.floor((currentTime - initialDate) / (4 * 60 * 60 * 1000));
+  var timeDifferenceProudCitizens = Math.floor((currentTime - initialDate) / (6 * 60 * 60 * 1000));
+
+  var immigrationCount = 1401 + timeDifferenceImmigration * immigrationIncrementRate;
+  var proudCitizensCount = 601 + timeDifferenceProudCitizens * proudCitizensIncrementRate;
+
+  updateCounts();
+
+  function updateCounts() {
+    var immigrationElement = document.getElementById('immigration-count');
+    var immigrationH2 = immigrationElement.querySelector('h2');
+    if (immigrationH2) {
+      immigrationH2.innerText = immigrationCount.toLocaleString() + '+';
+    }
+
+    var proudCitizensElement = document.getElementById('proud-citizens-count');
+    var proudCitizensH2 = proudCitizensElement.querySelector('h2');
+    if (proudCitizensH2) {
+      proudCitizensH2.innerText = proudCitizensCount.toLocaleString() + '+';
+    }
+  }
+});
+
+</script>

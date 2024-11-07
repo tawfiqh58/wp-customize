@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .animated-border {
+        width: 200px; /* Adjust width and height as needed */
+        height: 100px;
+        background-color: transparent;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+        border: 5px solid transparent; /* Set border width */
+      }
+
+      .animated-border::after {
+        content: '';
+        position: absolute;
+        inset: 0; /* Inset stretches border to fill element */
+        animation: animate-border 5s linear infinite; /* Animation name, duration, timing, loop */
+        background-image: linear-gradient(
+          to right,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          violet
+        ); /* Colorful gradient */
+        animation-fill-mode: forwards; /* Maintains final state */
+      }
+
+      @keyframes animate-border {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 300% 0;
+        } /* Moves gradient for animation */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animated-border"></div>
+  </body>
+</html>

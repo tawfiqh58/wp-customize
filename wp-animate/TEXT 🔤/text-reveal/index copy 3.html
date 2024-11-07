@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .reveal-container {
+        position: relative;
+
+        margin-top: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      .reveal-text {
+        font-size: 50px;
+        font-weight: bold;
+        overflow: hidden; /* Hide the text initially */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal-container">
+      <p class="reveal-text">
+        This is some text that will reveal word by word. This is some text that
+        will reveal word by word. This is some text that will reveal word by
+        word. This is some text that will reveal word by word.
+      </p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
+    <script>
+      // Initialize SplitType
+      const textToSplit = new SplitType('.reveal-text', { types: 'words' });
+
+      // Create a GSAP timeline
+      const tl = gsap.timeline();
+
+      // Reveal animation - Animate characters from below
+      tl.from(textToSplit.words, {
+        y: 80,
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.05, // Delay between each character animation
+        ease: 'back.out(1.7)',
+      });
+    </script>
+  </body>
+</html>

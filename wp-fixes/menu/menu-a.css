@@ -1,0 +1,18 @@
+#custom-menu .menu-item > .elementor-item:before {
+  content: '';
+  opacity: 1;
+  pointer-events: none;
+  background-color: #fee34c;
+
+  transition: transform 0.2s ease;
+
+  position: absolute;
+  left: 0;
+  background-color: #fee34c;
+  width: 36px;
+  height: 36px;
+}
+
+#custom-menu .menu-item > .elementor-item:hover:before {
+  transform: translateX(36px);
+}

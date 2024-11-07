@@ -1,0 +1,15 @@
+selector .jet-slick-dots li {
+  height: 0.3rem;
+  width: 0.3rem;
+  border-radius: 100%;
+  transition: all 0.1s ease;
+  transform-origin: center;
+}
+selector .jet-slick-dots li.slick-active {
+  transform: scale(2);
+}
+
+selector .jet-slick-dots {
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,40 @@
+<style>
+        .radio-images {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+        }
+        .radio-images.active {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const radioButtons = document.querySelectorAll('.custom-radio');
+            const images = document.querySelectorAll('.radio-images');
+
+            function showImage(imageId) {
+                images.forEach(image => {
+                    image.classList.remove('active');
+                });
+                const imageToShow = document.querySelector(`#${imageId}`);
+                if (imageToShow) {
+                    imageToShow.classList.add('active');
+                }
+            }
+
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function () {
+                    showImage(this.value);
+                });
+            });
+
+            // Initialize with the selected radio button
+            const selectedRadio = document.querySelector('.custom-radio:checked');
+            if (selectedRadio) {
+                showImage(selectedRadio.value);
+            }
+        });
+    </script>

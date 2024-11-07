@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #scroll-container {
+        height: 200vh; /* Ensure enough scroll area */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      #prism {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(45deg, #6ab3f8, #1c6cb6);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle (prism) */
+        position: relative;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        transition: box-shadow 0.5s ease;
+      }
+
+      .light {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.7) 0%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      #company-name {
+        position: absolute;
+        font-size: 2em;
+        color: white;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      /* Keyframes for prism glowing and light emission */
+      @keyframes glow {
+        0% {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        }
+        100% {
+          box-shadow: 0 0 30px rgba(173, 216, 230, 1),
+            0 0 60px rgba(173, 216, 230, 0.5);
+        }
+      }
+
+      @keyframes lightPulse {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scroll-container">
+      <div id="prism">
+        <div class="light"></div>
+      </div>
+      <div id="company-name">Dream Build Innovate</div>
+    </div>
+    <script>
+      document.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const prism = document.getElementById("prism");
+        const light = document.querySelector(".light");
+        const companyName = document.getElementById("company-name");
+        const startScroll = 200; // Adjust this based on your design
+        const endScroll = 400;
+
+        if (scrollPosition > startScroll && scrollPosition < endScroll) {
+          const progress =
+            (scrollPosition - startScroll) / (endScroll - startScroll);
+
+          // Animate prism glow
+          prism.style.boxShadow = `0 0 ${
+            10 + 40 * progress
+          }px rgba(173, 216, 230, ${progress})`;
+
+          // Light emission
+          light.style.opacity = progress;
+
+          // Show company name when progress is almost done
+          if (progress > 0.8) {
+            companyName.style.opacity = (progress - 0.8) / 0.2;
+            companyName.style.transform = `translateY(${
+              (1 - progress) * 30
+            }px)`;
+          }
+        } else if (scrollPosition >= endScroll) {
+          // Ensure final state after scroll past the animation range
+          prism.style.boxShadow = `0 0 50px rgba(173, 216, 230, 1)`;
+          light.style.opacity = 1;
+          companyName.style.opacity = 1;
+          companyName.style.transform = `translateY(0)`;
+        } else {
+          // Reset before the scroll range
+          prism.style.boxShadow = `0 0 10px rgba(0, 0, 0, 0)`;
+          light.style.opacity = 0;
+          companyName.style.opacity = 0;
+          companyName.style.transform = `translateY(30px)`;
+        }
+      });
+    </script>
+  </body>
+</html>

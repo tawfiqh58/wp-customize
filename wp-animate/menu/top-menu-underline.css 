@@ -1,0 +1,34 @@
+@media screen and (min-width: 767px) {
+  selector .elementor-nav-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 2rem;
+}
+selector .menu-item {
+  display: flex;
+}
+selector .menu-item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #016aac;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease-out;
+}
+
+selector .menu-item:hover:after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+selector .menu-item a {
+  margin: 0;
+}
+
+}

@@ -1,0 +1,107 @@
+<style>
+  .woocommerce-tabs h2heading:last-of-type {
+    visibility: hidden;
+  }
+</style>
+<script>
+  const targetLocation = document.getElementById('yotpo-set-container');
+
+  function moveYotpoReview(yotpoWidget) {
+    if (yotpoWidget) {
+      if (targetLocation) {
+        const innerContainer = targetLocation.querySelector('.e-con-inner');
+
+        if (innerContainer) {
+          const currentParent = yotpoWidget.parentElement;
+          if (currentParent) {
+            currentParent.removeChild(yotpoWidget);
+          }
+
+          innerContainer.appendChild(yotpoWidget);
+        } else {
+          console.error('Inner container element not found.');
+        }
+      } else {
+        console.error('Target location element not found.');
+      }
+
+      clearTimeout(checkTimer);
+      console.error('Yotpo review widget element not found.');
+    }
+  }
+
+  let checkTimer;
+
+  function checkForWidget() {
+    const yotpoWidget = document.querySelector('.yotpo-main-widget');
+
+    if (yotpoWidget) {
+      moveYotpoReview(yotpoWidget);
+    } else {
+      checkTimer = setTimeout(checkForWidget, 1000);
+    }
+  }
+
+  setTimeout(checkForWidget, 2000);
+
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log(
+      'Page loaded. Yotpo review will be moved when found (after a delay, retrying if necessary).'
+    );
+  });
+</script>
+
+{{/* Final Code */}}
+
+<style>
+  .woocommerce-tabs h2heading:last-of-type {
+    visibility: hidden;
+  }
+</style>
+<script>
+  const targetLocation = document.getElementById('yotpo-set-container');
+
+  function moveYotpoReview(yotpoWidget) {
+    if (yotpoWidget) {
+      if (targetLocation) {
+        const innerContainer = targetLocation.querySelector('.e-con-inner');
+
+        if (innerContainer) {
+          const currentParent = yotpoWidget.parentElement;
+          if (currentParent) {
+            currentParent.removeChild(yotpoWidget);
+          }
+
+          innerContainer.appendChild(yotpoWidget);
+        } else {
+          console.error('Inner container element not found.');
+        }
+      } else {
+        console.error('Target location element not found.');
+      }
+
+      clearTimeout(checkTimer);
+      console.error('Yotpo review widget element not found.');
+    }
+  }
+
+  let checkTimer;
+
+  function checkForWidget() {
+    const yotpoWidget = document.querySelector('.yotpo-main-widget');
+
+    if (yotpoWidget) {
+      moveYotpoReview(yotpoWidget);
+    } else {
+      checkTimer = setTimeout(checkForWidget, 1000);
+    }
+  }
+
+  setTimeout(checkForWidget, 2000);
+
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log(
+      'Page loaded. Yotpo review will be moved when found (after a delay, retrying if necessary).'
+    );
+  });
+</script>

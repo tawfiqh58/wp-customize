@@ -1,0 +1,10 @@
+selector .jet-list-collapsible .jet-collapse-icon {
+  order: 2;
+  width: 1rem;
+  height: 1rem;
+}
+
+selector .jet-checkboxes-list__decorator {
+  width: 1rem;
+  height: 1rem;
+}

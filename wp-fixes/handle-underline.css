@@ -1,0 +1,6 @@
+selector h3 {
+    text-decoration: underline;
+    text-decoration-color: #c1272d;
+    text-decoration-thickness: 2px;
+    text-underline-offset: .3em;
+}

@@ -1,0 +1,40 @@
+<style>
+  .header-section {
+    cursor: pointer;
+  }
+  .content-section {
+    overflow: hidden;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+  }
+  .content-section.active {
+    max-height: 2000px;
+    padding-top: 3em;
+    padding-bottom: 5em;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const headerSections = document.querySelectorAll('.header-section');
+
+    headerSections.forEach((header) => {
+      header.addEventListener('click', function () {
+        const target = this.getAttribute('data-target');
+
+        const contentSection = document.querySelector(
+          `.content-section[data-content="${target}"]`
+        );
+
+        if (contentSection) {
+          if (contentSection.classList.contains('active')) {
+            contentSection.classList.remove('active');
+          } else {
+            contentSection.classList.add('active');
+          }
+        }
+      });
+    });
+  });
+</script>

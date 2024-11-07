@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Fauna One', serif;
+      }
+      body,
+      html {
+        height: 100%;
+      }
+      .wrapper {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        perspective: 1000;
+      }
+      .section {
+        height: 100%;
+        width: calc(100% / 5);
+        float: left;
+        position: relative;
+      }
+      .section:nth-child(1) {
+        background: #f64747;
+      }
+      .section:nth-child(2) {
+        background: #22a7f0;
+      }
+      .section:nth-child(3) {
+        background: #f9690e;
+      }
+      .section:nth-child(4) {
+        background: #9b59b6;
+      }
+      .section:nth-child(5) {
+        background: #03c9a9;
+      }
+      .sections {
+        width: 500%;
+        height: 100%;
+      }
+      .section__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="height: 100vh"></div>
+    <div class="wrapper" id="js-wrapper">
+      <div class="sections" id="js-slideContainer">
+        <section class="section">
+          <span class="section__title" id="title1">Section One</span>
+          <span id="trigger--title1"></span>
+        </section>
+        <section class="section">
+          <span class="section__title" id="title2">Section Two</span>
+          <span id="trigger--title2"></span>
+        </section>
+        <section class="section">
+          <span class="section__title" id="title3">Section Three</span>
+          <span id="trigger--title3"></span>
+        </section>
+        <section class="section">
+          <span class="section__title" id="title4">Section Four</span>
+          <span id="trigger--title4"></span>
+        </section>
+        <section class="section">
+          <span class="section__title" id="title5">Section Five</span>
+          <span id="trigger--title5"></span>
+        </section>
+      </div>
+    </div>
+    <div style="height: 100vh"></div>
+
+    <script>
+      var titles = document.querySelectorAll('.section__title');
+      TweenLite.defaultEase = Linear.easeNone;
+      $(function () {
+        // wait for document ready
+
+        var controller = new ScrollMagic.Controller();
+
+        var horizontalSlide = new TimelineMax()
+          // animate panels
+          .to('#js-slideContainer', 1, { x: '-20%' }, 'label1')
+          .from(titles[1], 0.5, { opacity: 0 }, 'label1+=0.5')
+          .to('#js-slideContainer', 1, { x: '-40%' }, 'label2')
+          .from(titles[2], 0.5, { opacity: 0 }, 'label2+=0.5')
+          .to('#js-slideContainer', 1, { x: '-60%' }, 'label3')
+          .from(titles[3], 0.5, { opacity: 0 }, 'label3+=0.5')
+          .to('#js-slideContainer', 1, { x: '-80%' }, 'label4')
+          .from(titles[4], 0.5, { opacity: 0 }, 'label4+=0.5');
+
+        // create scene to pin and link animation
+        new ScrollMagic.Scene({
+          triggerElement: '#js-wrapper',
+          triggerHook: 'onLeave',
+          duration: '400%',
+        })
+          .setPin('#js-wrapper')
+          .setTween(horizontalSlide)
+          //.addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
+      });
+    </script>
+  </body>
+</html>

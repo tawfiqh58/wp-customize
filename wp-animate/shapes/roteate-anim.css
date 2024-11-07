@@ -1,0 +1,54 @@
+selector .elementor-widget-container {
+  display: flex;
+}
+
+selector .elementor-heading-title {
+  z-index: 1;
+}
+
+selector .elementor-widget-container:before {
+  content: '';
+  z-index: 0;
+  border-radius: 2px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ff5414;
+  background-position: center center;
+  border-color: transparent;
+  border-style: solid;
+  -webkit-transform: rotate(183deg);
+  -moz-transform: rotate(183deg);
+  transform: rotate(183deg);
+}
+
+selector .elementor-widget-container {
+  animation: rotate-bg-bit 0.5s linear forwards;
+  backface-visibility: hidden;
+}
+
+@keyframes rotate-bg-bit {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: rotate(-6deg);
+  }
+}
+
+selector .elementor-widget-container .elementor-heading-title {
+  animation: rotate-txt-bit 0.5s linear forwards;
+  backface-visibility: hidden;
+}
+@keyframes rotate-txt-bit {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: rotate(6deg);
+  }
+}

@@ -1,0 +1,6 @@
+selector .wp-block-list li {
+  font-weight: 500;
+  color: #0e384c;
+  position: relative;
+  margin-bottom: 1rem;
+}

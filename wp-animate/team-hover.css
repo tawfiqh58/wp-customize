@@ -1,0 +1,4 @@
+.content-page .members-block:hover .image .img-bg {
+  transform: scale(1.1);
+  transform-origin: top center;
+}

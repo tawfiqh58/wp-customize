@@ -1,0 +1,74 @@
+selector .elementor-button .elementor-button-text {
+  z-index: 2;
+  transition: all 0.4s ease;
+  color: #fff;
+}
+selector .elementor-button {
+  position: relative;
+  transition: color 0.4s ease;
+}
+
+selector .elementor-button:before,
+selector .elementor-button:after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+  transition: height 0.4s ease;
+}
+
+selector .elementor-button:before {
+  left: 0;
+  top: 0;
+  height: 0;
+}
+
+selector .elementor-button:after {
+  left: 50%;
+  top: 0;
+  height: 0;
+}
+
+selector .elementor-button-content-wrapper:before,
+selector .elementor-button-content-wrapper:after {
+  content: "";
+  z-index: 0;
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+  transition: height 0.4s ease;
+}
+
+selector .elementor-button-content-wrapper:before {
+  left: 25%;
+  bottom: 0;
+  height: 0;
+}
+
+selector .elementor-button-content-wrapper:after {
+  left: 75%;
+  bottom: 0;
+  height: 0;
+}
+
+/*Hover*/
+selector .elementor-button:hover .elementor-button-text {
+  color: #000;
+}
+
+selector .elementor-button:hover:before {
+  height: 100%;
+}
+
+selector .elementor-button:hover:after {
+  height: 100%;
+}
+
+selector .elementor-button:hover .elementor-button-content-wrapper:before {
+  height: 100%;
+}
+selector .elementor-button:hover .elementor-button-content-wrapper:after {
+  height: 100%;
+}

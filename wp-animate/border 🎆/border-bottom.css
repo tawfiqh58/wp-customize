@@ -1,0 +1,23 @@
+selector:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    left: 50%;
+    transform: translatex(-50%);
+    background-color: #AB003D;
+    -webkit-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -khtml-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -moz-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -ms-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    height: .3em;
+    width: 0;
+    border: none;
+  }
+  
+  selector:hover:before {
+      width: 100%;
+  }
+  

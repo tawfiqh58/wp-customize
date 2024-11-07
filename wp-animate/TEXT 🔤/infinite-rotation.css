@@ -1,0 +1,16 @@
+selector {    animation: ann-infinite-rotate 10s linear infinite;
+}
+
+@keyframes ann-infinite-rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(1turn);
+        -o-transform: rotate(1turn);
+        transform: rotate(1turn)
+    }
+}

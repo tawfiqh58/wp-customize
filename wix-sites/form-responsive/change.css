@@ -1,0 +1,21 @@
+#kreativmanagement
+      .hm-contact-form-container
+      .hm-contact-form
+      .hm-contact-form-button-container
+      .hm-contact-form-button {
+      margin-left: 200px;
+    }
+  @media screen and (max-width: 1000px) {
+    #kreativmanagement
+      .hm-contact-form-container
+      .hm-contact-form
+      .hm-contact-form-button-container
+      .hm-contact-form-button {
+      margin-left: 0;
+    }
+  }
+  @media(max-width: 1000px) {
+    .hm-contact-form-container .hm-contact-form .hm-action-container .hm-contact-form-button-container .hm-contact-form-button,.hm-contact-form-configuration-container .hm-contact-form .hm-action-container .hm-contact-form-button-container .hm-contact-form-button {
+        margin-left: 0;
+    }
+}

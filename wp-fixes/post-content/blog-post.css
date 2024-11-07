@@ -1,0 +1,78 @@
+selector h2 {
+  margin-top: 2rem;
+}
+selector a {
+  font-weight: 700;
+}
+
+selector ol {
+  list-style-type: none;
+}
+
+selector ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+selector li {
+  padding-left: 1.8em;
+  position: relative;
+  list-style-type: none;
+  padding-bottom: 0.5em;
+}
+
+selector li::before {
+  content: '1';
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  height: 1rem;
+  width: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 0.85rem;
+  background: #2974d2;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 1000px;
+}
+selector li:nth-child(2)::before {
+  content: '2';
+}
+
+selector li:nth-child(3)::before {
+  content: '3';
+}
+
+selector li:nth-child(4)::before {
+  content: '4';
+}
+
+selector li:nth-child(5)::before {
+  content: '5';
+}
+
+selector li:nth-child(6)::before {
+  content: '6';
+}
+
+selector li:nth-child(7)::before {
+  content: '7';
+}
+
+selector li:nth-child(8)::before {
+  content: '8';
+}
+
+selector li:nth-child(9)::before {
+  content: '9';
+}
+
+selector li:nth-child(10)::before {
+  content: '10';
+}
+
+selector li:nth-child(11)::before {
+  content: '11';
+}

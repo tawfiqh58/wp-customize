@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .anim-container {
+      position: relative;
+      border: 1px solid red;
+    }
+
+    .slide-me-div {
+      transform: translateX(100%);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+  </style>
+  <title>Scroll Trigger</title>
+</head>
+<body>
+  <div style="height: 1000px;"></div>
+  <div class="anim-container">
+    <div class="slide-me-div" style="color: black; height: 50px;">Your content here 1</div>
+    <div class="slide-me-div" style="color: green; height: 50px;">Your content here 2</div>
+    <div class="slide-me-div" style="color: yellow; height: 50px;">Your content here 3</div>
+  </div>
+  <div style="height: 1000px;"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.querySelector(".anim-container");
+      const movingDivs = container.querySelectorAll(".slide-me-div");
+
+      window.addEventListener("scroll", function () {
+        movingDivs.forEach((movingDiv, index) => {
+          const containerRect = container.getBoundingClientRect();
+          const divRect = movingDiv.getBoundingClientRect();
+          const delay = index * 0.2; // Adjust the delay factor as needed
+
+          if (
+            containerRect.top <= window.innerHeight &&
+            containerRect.bottom >= 0
+          ) {
+            const scrollProgress = Math.max(0, window.innerHeight - divRect.top - delay) / window.innerHeight;
+            const _scrollSpeed = scrollProgress * 1.4;
+            const _progress = Math.max(0, _scrollSpeed * 100);
+            const newWidth = _progress > 100 ? 100 : _progress;
+
+            const newTransform = "translateX(" + (100 - newWidth) + "%)";
+            movingDiv.style.transform = newTransform;
+            movingDiv.style.opacity = newWidth + "%";
+          } else {
+            if (containerRect.top > window.innerHeight) {
+              movingDiv.style.transform = "translateX(0%)";
+            } else {
+              movingDiv.style.transform = "translateX(100%)";
+              movingDiv.style.opacity = 1;
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

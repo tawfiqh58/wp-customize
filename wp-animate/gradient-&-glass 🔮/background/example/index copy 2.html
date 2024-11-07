@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      .hero-gradient-bg-wrap {
+        height: 100vh; /* 56% reduced height */
+        overflow: hidden;
+      }
+      .hero-background--size {
+        width: 100%;
+        height: 262vh; /*Adjust the height */
+      }
+
+      .gradient-bg-wrap {
+        height: 30em; /* 56% reduced height */
+        overflow: hidden;
+        border-radius: 2em;
+      }
+      .background--size {
+        width: 100%;
+        height: 80em; /*Adjust the height */
+      }
+      #canvas,
+      #hero-canvas {
+        transform: scale(2) translateY(-56%);
+        --gradient-color-1: #7038ff;
+        --gradient-color-2: #000;
+        --gradient-color-3: #ffba27;
+        --gradient-color-4: #000;
+        --gradient-speed: 0.000006;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero-gradient-bg-wrap">
+      <div class="hero-background--size">
+        <canvas id="hero-canvas" />
+      </div>
+    </div>
+
+    <div class="gradient-bg-wrap">
+      <div class="background--size">
+        <canvas id="canvas" />
+      </div>
+    </div>
+    <script src="minigl.js"></script>
+    <script>
+      var gradient = new Gradient();
+      gradient.initGradient('#canvas');
+      var gradient2 = new Gradient();
+      gradient2.initGradient('#hero-canvas');
+    </script>
+  </body>
+</html>

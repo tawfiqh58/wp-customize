@@ -1,0 +1,219 @@
+<script>
+  const targetNode = document.querySelector('#tab-yotpo_main_widget');
+
+  const observerConfig = {
+    childList: true,
+    subtree: true,
+  };
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      const addedNodes = Array.from(mutation.addedNodes);
+      const yotpoWidget = addedNodes.find(
+        (node) => node.classList && node.classList.contains('yotpo-main-widget')
+      );
+
+      if (yotpoWidget) {
+        observer.disconnect();
+        moveYotpoReview(yotpoWidget);
+      }
+    });
+  });
+
+  observer.observe(targetNode, observerConfig);
+
+  function moveYotpoReview(yotpoWidget) {
+    if (yotpoWidget) {
+      const targetLocation = document.getElementById('yotpo-set-container');
+
+      if (targetLocation) {
+        const currentParent = yotpoWidget.parentElement;
+        if (currentParent) {
+          currentParent.removeChild(yotpoWidget);
+        }
+
+        targetLocation.appendChild(yotpoWidget);
+      } else {
+        console.error('Target location element not found.');
+      }
+    } else {
+      console.error('Yotpo review widget element not found.');
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log('Page loaded. Yotpo review will be moved when found.');
+  });
+</script>
+
+<script>
+  const targetNode = document.querySelector('#tab-yotpo_main_widget');
+
+  const observerConfig = {
+    childList: true,
+    subtree: true,
+  };
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      const addedNodes = Array.from(mutation.addedNodes);
+      const yotpoWidget = addedNodes.find(
+        (node) => node.classList && node.classList.contains('yotpo-main-widget')
+      );
+
+      if (yotpoWidget) {
+        observer.disconnect();
+        moveYotpoReview(yotpoWidget);
+      }
+    });
+  });
+
+  observer.observe(targetNode, observerConfig);
+
+  function moveYotpoReview(yotpoWidget) {
+    if (yotpoWidget) {
+      const targetLocation = document.getElementById('yotpo-set-container');
+
+      if (targetLocation) {
+        const currentParent = yotpoWidget.parentElement;
+        if (currentParent) {
+          currentParent.removeChild(yotpoWidget);
+        }
+
+        targetLocation.appendChild(yotpoWidget);
+      } else {
+        console.error('Target location element not found.');
+      }
+    } else {
+      console.error('Yotpo review widget element not found.');
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log('Page loaded. Yotpo review will be moved when found.');
+  });
+</script>
+
+<script>
+  const targetLocation = document.getElementById('yotpo-set-container');
+
+  setTimeout(() => {
+    const yotpoWidget = document.querySelector('.yotpo-main-widget');
+
+    if (yotpoWidget) {
+      moveYotpoReview(yotpoWidget);
+    } else {
+      console.error('Yotpo review widget element not found.');
+    }
+  }, 2000);
+
+  function moveYotpoReview(yotpoWidget) {
+    if (yotpoWidget) {
+      if (targetLocation) {
+        const currentParent = yotpoWidget.parentElement;
+        if (currentParent) {
+          currentParent.removeChild(yotpoWidget);
+        }
+
+        targetLocation.appendChild(yotpoWidget);
+      } else {
+        console.error('Target location element not found.');
+      }
+    } else {
+      console.error('Yotpo review widget element not found.');
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log(
+      'Page loaded. Yotpo review will be moved when found (after a delay).'
+    );
+  });
+</script>
+
+{{/* Working Code */}}
+
+<style>
+  .resp-accordion.hor_tab_set3[aria-controls='hor_tab_set3_tab_item-3'] {
+    display: none;
+  }
+</style>
+<script>
+  const targetLocation = document.getElementById('yotpo-set-container');
+
+  setTimeout(() => {
+    const yotpoWidget = document.querySelector('.yotpo-main-widget');
+
+    if (yotpoWidget) {
+      moveYotpoReview(yotpoWidget);
+    } else {
+      console.error('Yotpo review widget element not found.');
+    }
+  }, 2000);
+
+  function moveYotpoReview(yotpoWidget) {
+    if (yotpoWidget) {
+      if (targetLocation) {
+        const currentParent = yotpoWidget.parentElement;
+        if (currentParent) {
+          currentParent.removeChild(yotpoWidget);
+        }
+
+        targetLocation.appendChild(yotpoWidget);
+      } else {
+        console.error('Target location element not found.');
+      }
+    } else {
+      console.error('Yotpo review widget element not found.');
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log(
+      'Page loaded. Yotpo review will be moved when found (after a delay).'
+    );
+  });
+</script>
+
+{{/* Clear timer */}}
+<script>
+  const targetLocation = document.getElementById('yotpo-set-container');
+
+  function moveYotpoReview(yotpoWidget) {
+    if (yotpoWidget) {
+      if (targetLocation) {
+        const currentParent = yotpoWidget.parentElement;
+        if (currentParent) {
+          currentParent.removeChild(yotpoWidget);
+        }
+
+        targetLocation.appendChild(yotpoWidget);
+      } else {
+        console.error('Target location element not found.');
+      }
+
+      clearTimeout(checkTimer);
+      console.error('Yotpo review widget element not found.');
+    }
+  }
+
+  let checkTimer;
+
+  function checkForWidget() {
+    const yotpoWidget = document.querySelector('.yotpo-main-widget');
+
+    if (yotpoWidget) {
+      moveYotpoReview(yotpoWidget);
+    } else {
+      checkTimer = setTimeout(checkForWidget, 1000);
+    }
+  }
+
+  setTimeout(checkForWidget, 2000);
+
+  window.addEventListener('DOMContentLoaded', () => {
+    console.log(
+      'Page loaded. Yotpo review will be moved when found (after a delay, retrying if necessary).'
+    );
+  });
+</script>

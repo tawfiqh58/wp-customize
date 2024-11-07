@@ -1,0 +1,25 @@
+#woo_product_tab_ .resp-accordion:nth-child(4) {
+  display: none;
+}
+
+#woo_product_tab_ .woocommerce-Tabs-panel--additional_information {
+  display: none;
+}
+
+/* Underline style */
+selector .wc-tabs li {
+  border: none !important;
+  border-bottom: 2px solid #ebebeb !important;
+}
+
+selector .wc-tabs li.active {
+  border-bottom: 2px solid #10235e !important;
+}
+
+selector .wc-tabs {
+  padding: 0 !important;
+}
+
+selector .woocommerce-Tabs-panel {
+  border-color: #ebebeb !important;
+}

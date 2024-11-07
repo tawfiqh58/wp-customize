@@ -1,0 +1,4 @@
+mutation{ create_item (board_id:1340625163, group_id: "topics",
+    item_name: "Dummy Item",
+    column_values: "{\"text0\": \"Hello\", \"zahlen\": \"42\", \"status7\": {\"label\": \"Done\"}}"
+  ) { id } }

@@ -1,0 +1,97 @@
+selector .wp-container-core-columns-is-layout-1,
+.wp-container-core-columns-is-layout-2 {
+  margin: 0;
+  gap: 1em;
+}
+
+@media screen and (max-width: 767px) {
+  selector .wp-container-core-columns-is-layout-1,
+  .wp-container-core-columns-is-layout-2 {
+    gap: 0;
+  }
+}
+
+selector .jet-form-builder__next-page-wrap {
+  margin-top: 1rem;
+}
+selector button {
+  padding: 0.7rem 1.5rem !important;
+  border-radius: 0;
+  margin-right: 0.4rem;
+
+  font-family: "Poppins", Sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+}
+
+selector .form-p {
+  font-size: 0.8rem;
+}
+
+selector .jet-form-builder__field-label.for-radio :checked + span::before {
+  background-color: none !important;
+  background-image: none !important;
+  border-color: #999 !important;
+  background: linear-gradient(
+    90deg,
+    #feed7a 0%,
+    #ff8400 48.96%,
+    #df91f7 100%
+  ) !important;
+}
+
+selector .jet-form-builder__field-label.for-checkbox :checked + span::before {
+  background-color: none !important;
+  background-image: none !important;
+  border-color: #999 !important;
+  background: linear-gradient(
+    90deg,
+    #feed7a 0%,
+    #ff8400 48.96%,
+    #df91f7 100%
+  ) !important;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: none !important;
+  background-image: none !important;
+  border-color: #999 !important;
+  background: linear-gradient(
+    90deg,
+    #feed7a 0%,
+    #ff8400 48.96%,
+    #df91f7 100%
+  ) !important;
+  height: 8px;
+  border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+  background-color: none !important;
+  background-image: none !important;
+  border-color: #999 !important;
+  background: linear-gradient(
+    90deg,
+    #feed7a 0%,
+    #ff8400 48.96%,
+    #df91f7 100%
+  ) !important;
+  height: 8px;
+  border-radius: 5px;
+}
+
+input[type="range"]::-ms-track {
+  background-color: none !important;
+  background-image: none !important;
+  border-color: #999 !important;
+  background: linear-gradient(
+    90deg,
+    #feed7a 0%,
+    #ff8400 48.96%,
+    #df91f7 100%
+  ) !important;
+  height: 8px;
+  border-radius: 5px;
+  border: none;
+}

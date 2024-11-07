@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+      }
+
+      .anim-container {
+        position: relative;
+        border: 1px solid red;
+      }
+
+      .moving-div {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100px;
+        background-color: #3498db;
+        color: #fff;
+        padding: 20px;
+        transition: width 0.5s ease; /* Add a transition for smooth width change */
+      }
+    </style>
+
+    <title>Scroll Trigger</title>
+  </head>
+  <body>
+    <div style="height: 1000px"></div>
+    <section class="anim-container">
+      <div class="moving-div" id="slide-me">Your content here</div>
+    </section>
+    <div style="height: 1000px"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.querySelector(".anim-container");
+        const movingDiv = document.getElementById("slide-me");
+
+        window.addEventListener("scroll", function () {
+          const containerRect = container.getBoundingClientRect();
+
+          if (
+            containerRect.top <= window.innerHeight &&
+            containerRect.bottom >= 0
+          ) {
+            const scrollProgress =
+              Math.max(0, window.innerHeight - containerRect.top) /
+              window.innerHeight;
+            const _progress = Math.max(0, scrollProgress * 100);
+            const newWidth = _progress > 100 ? 100 : _progress + "%";
+            movingDiv.style.width = newWidth;
+            movingDiv.style.opacity = newWidth;
+          } else {
+            if (containerRect.top > window.innerHeight) {
+              movingDiv.style.width = "0%";
+            } else {
+              movingDiv.style.width = "100%";
+              movingDiv.style.opacity = 1;
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

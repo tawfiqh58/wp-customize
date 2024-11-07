@@ -1,0 +1,149 @@
+.jet-form-builder__field-wrap.radio-wrap.checkradio-wrap {
+  margin-top: 0.5em;
+  margin-right: 1em;
+}
+.jet-form-builder__field-label.for-radio :checked + span::before {
+  border-color: #8d394d !important;
+  background-color: #8d394d !important;
+}
+.jet-form-builder__field-label > span::before {
+  border: 1px solid #8d394d !important;
+}
+
+/* Date Circle Selection */
+
+.jet-form-builder__field-wrap.radio-wrap.checkradio-wrap {
+  margin-top: 0.5em;
+  margin-right: 1em;
+}
+.jet-form-builder__field-label.for-radio :checked + span::before {
+  border-color: #8d394d !important;
+  background-color: #8d394d !important;
+}
+.jet-form-builder__field-label > span::before {
+  border: 1px solid #8d394d !important;
+}
+
+selector .wp-container-core-columns-is-layout-1,
+.wp-container-core-columns-is-layout-2 {
+  margin: 0;
+  gap: 1em;
+}
+
+selector .jet-apb-calendar-date .jet-apb-calendar-date-body {
+  height: 3em;
+  width: 3em;
+}
+
+@media screen and (max-width: 767px) {
+  selector .wp-container-core-columns-is-layout-1,
+  .wp-container-core-columns-is-layout-2 {
+    gap: 0;
+  }
+
+  selector .jet-apb-calendar-date .jet-apb-calendar-date-body {
+    height: 2em;
+    width: 2em;
+  }
+}
+
+selector .form-heading {
+  font-size: 2.4em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+selector .jet-apb-calendar-date {
+  padding: 0.5rem;
+}
+
+selector
+  .jet-apb-calendar-date[data-status='true']
+  .jet-apb-calendar-date-body {
+  background-color: #ceefff;
+  color: #000 !important;
+  border-radius: 1000px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+selector
+  .jet-apb-calendar-date.jet-apb-calendar-date--selected
+  .jet-apb-calendar-date-body {
+  background-color: #4eb3e1;
+  color: #fff !important;
+}
+
+/* Gehmert site Standard Design */
+selector .wp-container-core-columns-is-layout-1,
+.wp-container-core-columns-is-layout-2 {
+  margin: 0;
+  gap: 1em;
+}
+
+@media screen and (max-width: 767px) {
+  selector .wp-container-core-columns-is-layout-1,
+  .wp-container-core-columns-is-layout-2 {
+    gap: 0;
+  }
+}
+.jet-form-builder__field-wrap.radio-wrap.checkradio-wrap {
+  margin-top: 0.5em;
+  margin-right: 1em;
+}
+.jet-form-builder__field-label.for-radio :checked + span::before {
+  border-color: #615145 !important;
+  background-color: #615145 !important;
+}
+.jet-form-builder__field-label > span::before {
+  border: 1px solid #615145 !important;
+}
+
+selector .jet-form-builder__field-label.for-checkbox span {
+  display: flex;
+  align-items: center;
+}
+
+selector .jet-form-builder__field-label.for-checkbox > span > p {
+  margin: 0;
+}
+
+selector a {
+  color: inherit;
+}
+
+selector .jet-apb-calendar-date .jet-apb-calendar-date-body {
+  height: 2.4em;
+  width: 2.4em;
+}
+
+@media screen and (max-width: 767px) {
+  selector .jet-apb-calendar-date .jet-apb-calendar-date-body {
+    height: 1.8em;
+    width: 1.8em;
+  }
+}
+
+selector .jet-apb-calendar-date {
+  padding: 0.2rem;
+}
+
+selector
+  .jet-apb-calendar-date[data-status='true']
+  .jet-apb-calendar-date-body {
+  background-color: #fffef8;
+  color: #000 !important;
+  border-radius: 1000px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+selector
+  .jet-apb-calendar-date.jet-apb-calendar-date--selected
+  .jet-apb-calendar-date-body {
+  background-color: #615145;
+  color: #fff !important;
+}

@@ -1,0 +1,82 @@
+<style>
+    .item {
+        display: flex;
+        align-items: center;
+        background-color: rgba(38,38,38,.6);
+        border-radius: .5rem;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .icon-svg {
+        width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .2rem;
+    }
+    .item-text {
+        color: #fff;
+    }
+</style>
+
+  <div class="owl-carousel owl-theme">
+    <div class="item" >
+        <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg"><path d="m1.6 4 3 3.3L10.3.7" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"></path></svg>
+        <span class="item-text">Ranked #1 on TrustPilot, 4.7 stars from thousands of reviews</span>
+    </div>
+    
+    <div class="item" >
+        <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg"><path d="m1.6 4 3 3.3L10.3.7" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"></path></svg>
+        <span class="item-text">Easy, quick installation to fit any e-commerce setups</span>
+    </div>
+    
+    <div class="item" >
+        <svg viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-svg"><path d="m1.6 4 3 3.3L10.3.7" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"></path></svg>
+        <span class="item-text">Customer-friendly claims for 7x reduction in support ticketss</span>
+    </div>
+    
+   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
+    jQuery(document).ready(function() {
+      $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:24,
+        responsiveClass:true,
+        dots : false,       
+        nav:false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        slideTransition: 'linear',
+        smartSpeed: 5000,
+        responsive:{
+            0:{
+                items:1,
+            },
+            400:{
+                items:1,
+                margin:24,
+            },
+            639:{
+                items:2,
+                margin:24,
+            },
+            1023:{
+                items:2,
+            },
+            1440: {
+                items:3,
+            },
+            1920 : {
+                items: 4
+            }
+        }
+    });
+    });
+  </script>

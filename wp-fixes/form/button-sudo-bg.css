@@ -1,0 +1,23 @@
+selector .jet-form-builder__action-button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+selector .jet-form-builder__action-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 1000px;
+  background: var(--e-global-color-primary);
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+}
+selector .jet-form-builder__action-button:hover:after {
+  width: 100%;
+}

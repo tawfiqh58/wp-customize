@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Flipping Animation</title>
+  <style>
+    @keyframes flip {
+      0% {
+        transform: rotateX(0);
+        opacity: 1;
+      }
+      50% {
+        transform: rotateX(90deg);
+        opacity: 0;
+      }
+      51% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+      }
+      100% {
+        transform: rotateX(0);
+        opacity: 1;
+      }
+    }
+
+    .flip-container {
+      perspective: 1000px;
+      position: relative;
+      width: 200px; /* Set the width according to your text length */
+      height: 50px; /* Set the height according to your text size */
+      margin: auto;
+    }
+
+    .flip-text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px; /* Set the font size according to your design */
+      font-family: Arial, sans-serif; /* Choose your font */
+      white-space: nowrap; /* Prevent text from wrapping */
+      backface-visibility: hidden;
+      animation: flip 2s ease-in-out 1s forwards; /* Adjust duration and delay as needed */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="flip-container">
+    <div class="flip-text">First Text</div>
+    <div class="flip-text second-text">Second Text</div>   
+  </div>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+const mainHeader = document.querySelector('.main-header');
+const darkSections = gsap.utils.toArray('.dark-section');
+
+darkSections.forEach(section => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top+=100",
+    end: "bottom top",
+    onEnter: () => mainHeader.classList.add("transparent"),
+    onLeave: () => mainHeader.classList.remove("transparent"),
+    onLeaveBack: () => mainHeader.classList.remove("transparent"),
+    onEnterBack: () => mainHeader.classList.add("transparent"),
+    
+  });
+});
+const horizontalSection = document.getElementById('horizontal-section');
+const cardList = horizontalSection.querySelector('.card-list');
+
+const scrollTween = gsap.timeline({ 
+    scrollTrigger: {
+        trigger: horizontalSection,
+        pin: true, 
+        start: 'top top', 
+        end: () => `+=${cardList.scrollWidth - horizontalSection.offsetWidth}`, 
+        scrub: true,
+    }
+}).fromTo(cardList, {
+    x: 0
+}, {
+    x: () => -(cardList.scrollWidth - horizontalSection.offsetWidth), 
+    ease: 'none' 
+}).call(() => {
+  gsap.set(horizontalSection, { clearProps: "max-width" });
+}, null, "+=0.1");
+
+function resizeHandler() {
+    const isMobile = window.innerWidth < 1024; // Adjust breakpoint as needed
+    if (isMobile) {
+      setTimeout(() => {
+        scrollTween.scrollTrigger.disable();
+      }, 100); // Adjust delay in milliseconds if needed
+    } else {
+      scrollTween.scrollTrigger.enable();
+    }
+  }
+  
+
+window.addEventListener('resize', resizeHandler);
+resizeHandler();
+</script>
+
+
+
+<div class="section horizontal-scroll" id="horizontal-section">
+<div class="card-list">
+
+          
+          <div class="card">
+              <div class="img-wrapper">
+                  <img src="/wp-content/uploads/2024/06/stock-photo-portrait-of-a-handsome-businessman-in-his-office-1928215088.jpg"/>
+              </div>
+              
+              <div class="content-wrapper">
+                  <h2 class="card-title">
+                      INNOVATION STÄRKEN
+                  </h2>
+                  <p class="card-desc">
+                      <b>Sie möchten mir ihrem Team Geschäftsideen entwickeln?</b>
+Dann ist dieser Innovationworkshop genau richtig. Ob mit bereits vorhandenen Ideen
+oder ohne – wir erarbeiten neue Geschäftsideen für ihr Unternehmen, wenden
+Innovationsmethoden wie Design Thinking und agile Entscheidungstechniken an, die
+zu konkreten Ergebnissen führen und planen nächste Schritte.<br><br>
+TEAM-WORKSHOP | FÜHRUNGSKRÄFTEEVENT
+                  </p>
+              </div>
+          </div>
+          
+          <div class="card">
+              <div class="img-wrapper">
+                  <img src="/wp-content/uploads/2024/06/stock-photo-business-concept-portrait-handsome-business-man-holding-hands-with-confident-face-white-663176611.jpg"/>
+              </div>
+              
+              <div class="content-wrapper">
+                  <h2 class="card-title">
+                      IDEENMANAGEMENT AKTIVIEREN
+                  </h2>
+                  <p class="card-desc">
+                      <b>Sie möchten ihrem internen Ideenmanagement zu mehr Wirkkraft verhelfen?</b>
+Ich begleite Ihre Intrapreneurship-Teams auf dem Prozess von der Idee zum
+marktfähigen Geschäftsmodell. Dabei teile ich mein Innovations-Know-How bezüglich
+eines effizienten Prozesses, zielführender Methoden als auch meine vielfältige
+business building expertise. Hands-on arbeite ich mit und unterstütze flexibel wo
+gerade Man-power oder Wissen benötigt wird.<br><br>
+CO-CREATION | CONSULTING
+                  </p>
+              </div>
+          </div>
+          
+          <div class="card">
+              <div class="img-wrapper">
+                  <img src="/wp-content/uploads/2024/06/stock-photo-beautiful-businesswoman-portrait-124505092.jpg"/>
+              </div>
+              
+              <div class="content-wrapper">
+                  <h2 class="card-title">
+                      INNOVATIONSIDEEN REALISIEREN
+                  </h2>
+                  <p class="card-desc">
+                      <b>Sie setzen bereits Ideen um, aber es klappt noch nicht ganz?</b>Gemeinsam analysieren wir die Ursachen, identifizieren Lern- und
+Weiterentwicklungspotentiale des Teams, erstellen oder verbessern die Prozesse und
+optimieren verwendete Methoden und Tools. Manchmal reicht bereits ein erfahrener
+Entrepreneur für die richtige Weichenstellung zur richtigen Zeit, sodass ihr
+Innovationsteam selbständig weiterentwickeln kann.<br><br>
+CO-CREATION | CONSULTING
+                  </p>
+              </div>
+          </div>
+          
+          <div class="card">
+              <div class="img-wrapper">
+                  <img src="/wp-content/uploads/2024/06/2.jpg"/>
+              </div>
+              
+              <div class="content-wrapper">
+                  <h2 class="card-title">
+                      SUSTAINABILITY GESTALTEN
+                  </h2>
+                  <p class="card-desc">
+                      <b>Sie möchten ihr Unternehmen auch für die nächste Generation fit machen?</b>Nachhaltiges Wirtschaften ist mehr als Regulatorik und Pflichterfüllung – es geht um
+die Gestaltung nachhaltiger Geschäftsmodelle als integrativer Teil ihrer
+Wertschöpfung. Um für ihre Industrie passende Standards und Wege zu entwickeln,
+gilt es sich als Vorreiter zu etablieren und aktiv in ihrem Ökosystem den Wandel
+voranzutreiben. Dazu nutzen wir die Insights ihrer Analysen, ergänzen Erkenntnisse
+anderer Industrien und start-ups um relevante Erfolgskriterien und Maßnahmen
+abzuleiten.<br><br>
+WORKSHOP | STRATEGISCHES SPARRING | OPEN-COLLABORATION
+                  </p>
+              </div>
+          </div>
+          
+          <div class="card">
+              <div class="img-wrapper">
+                  <img src="/wp-content/uploads/2024/06/3.jpg"/>
+              </div>
+              
+              <div class="content-wrapper">
+                  <h2 class="card-title">
+                      WESENTLICHKEITSANALYSE NUTZEN
+                  </h2>
+                  <p class="card-desc">
+                      <b>Sie möchten ihre Wesentlichkeitsanalyse auch als Innovationserfolg nutzen?</b>Ihre ESG-Compliance und Reportingstrukturen sind bereits aufgesetzt – dann gilt es
+aus ihren Prioritäten der Wesentlichkeitsanalyse unternehmerischen Mehrwert zu
+generieren. Dazu nutzen wir Methoden wie business design und lean-startup. Denn
+abgeleitet vom Kunden identifizieren wir Angebotserweiterungen oder neue Offerings
+aus ESG-Maßnahmen die sich auszahlen.<br><br>
+WORKSHOP | FOLLOW-UPS | STRATEGISCHES SPARRING
+                  </p>
+              </div>
+          </div>
+          
+          <div class="card">
+              <div class="img-wrapper">
+                  <img src="/wp-content/uploads/2024/06/4.jpg"/>
+              </div>
+              
+              <div class="content-wrapper">
+                  <h2 class="card-title">
+                      ZIRKULARITÄT INTEGRIEREN
+                  </h2>
+                  <p class="card-desc">
+                      <b>Sie möchten zirkuläre Geschäftsmodelle für Unternehmenserfolg einsetzen?</b>Innovation times x - das ist Zirkularität, denn Kreislaufwirtschaft als strategisches
+Element nachhaltiger Geschäftsmodelle erfordert nicht nur eine ganzheitliche
+Betrachtung der eigenen Wertschöpfung sondern die holistische Analyse des
+Ökosystems. Trotz dieser Komplexität Zirkularität als Innovationsmotor zu zünden
+bedarf es erweiterter Ansäte wie open-collabaration.<br><br>
+WORKSHOP | STRATEGISCHES SPARRING | OPEN COLLABORATION LEADER
+                  </p>
+              </div>
+          </div>
+          
+          
+                <div class="card">
+                  <div class="img-wrapper">
+                  <img src="/wp-content/uploads/2024/06/5.jpg"/>
+              </div>
+              
+              <div class="content-wrapper">
+                  <h2 class="card-title">
+                      INDIVIDUELLE INNOVATIONSLÖSUNG
+                  </h2>
+                  <p class="card-desc">
+                      <b>Sie benötigen eine individuelle Beratung und Begleitung?</b>Sehr gerne finden wir gemeinsam die für sie passgenaue Lösung. Sei es in einem
+Gespräch oder im Rahmen eines Workshops – wir identifizieren den status-quo und die
+zu erreichenden Ziele, sodass wir die Stellhebel exakt für ihre Innovationsentwicklung
+kennen und die daraus nötigen und richtigen nächsten Schritte ableiten.<br><br>
+WORKSHOP | STRATEGISCHES SPARRING
+                  </p>
+              </div>
+          </div>
+          
+          
+         
+</div></div>
+
+
+<style>
+.section.horizontal-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-list {
+    display: inline-flex;
+    white-space: nowrap;
+    padding-top: 8em;
+}
+
+.card {
+    width: 24rem;
+    margin-right: 2em;
+}
+
+.card .img-wrapper {
+    height: 32rem;
+    width: 100%;
+}
+.card .img-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card .content-wrapper {
+    padding-right: 1rem;
+}
+
+.card .card-title,.card .card-desc {
+    white-space: normal;
+    color: var(--e-global-color-primary);
+    font-family: "Bowlby One", Sans-serif;
+    
+}
+
+.card .card-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.4em;
+    letter-spacing: 0em;
+}
+
+.card .card-desc {
+    white-space: normal;
+    color: #000000;
+    font-family: "Crimson Text", Sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4em;
+}
+
+@media screen and (max-width: 768px) { 
+    .horizontal-scroll {
+      width: 100%;
+      display: none;
+    }
+    .card {
+      display: block; 
+      width: auto;
+      margin: 10px auto;
+    }
+  }
+  </style>
+  

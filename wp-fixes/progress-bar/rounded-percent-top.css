@@ -1,0 +1,21 @@
+selector .elementor-progress-text {
+  display: none;
+}
+
+selector .elementor-progress-wrapper {
+  overflow: initial !important;
+  margin-top: 0.5rem;
+}
+
+selector .elementor-progress-percentage {
+  position: absolute;
+  right: 0;
+  top: -1.5rem;
+  color: #0e384c;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+selector .elementor-progress-bar {
+  border-radius: 1000px;
+}

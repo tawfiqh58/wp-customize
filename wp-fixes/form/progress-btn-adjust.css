@@ -1,0 +1,14 @@
+selector button {
+  padding: 0.7rem 1.5rem !important;
+  border-radius: 0;
+  margin-right: 0.4rem;
+
+  font-family: 'Poppins', Sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+}
+
+selector .form-p {
+  font-size: 0.8rem;
+}

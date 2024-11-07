@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+      }
+      .wave {
+        /* Common styles for all waves */
+        width: 200px;
+        height: 100px;
+        background-color: lightblue;
+        position: absolute;
+      }
+
+      @keyframes borderAnimation {
+        0% {
+          border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        }
+        50% {
+          border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+        }
+        100% {
+          border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        }
+      }
+
+      .wave1 {
+        animation: borderAnimation 2s infinite;
+      }
+
+      .wave2 {
+        animation: borderAnimation 2.2s infinite; /* Slightly slower */
+        animation-delay: 0.2s; /* Delayed start */
+      }
+
+      .wave3 {
+        animation: borderAnimation 1.8s infinite; /* Slightly faster */
+        animation-delay: 0.4s;
+      }
+
+      .wave4 {
+        animation: borderAnimation4 2s infinite;
+        animation-delay: 0.1s;
+      }
+      @keyframes borderAnimation4 {
+        0% {
+          border-radius: 55% 45% 35% 65%/65% 25% 75% 35%;
+        }
+        50% {
+          border-radius: 35% 65% 65% 35%/55% 65% 25% 65%;
+        }
+        100% {
+          border-radius: 55% 45% 35% 65%/65% 25% 75% 35%;
+        }
+      }
+
+      .wave5 {
+        /* Another shape variation */
+        animation: borderAnimation5 2.1s infinite;
+        animation-delay: 0.3s;
+      }
+      @keyframes borderAnimation5 {
+        0% {
+          border-radius: 65% 35% 25% 75%/55% 35% 65% 45%;
+        }
+        50% {
+          border-radius: 25% 75% 65% 35%/45% 70% 30% 70%;
+        }
+        100% {
+          border-radius: 65% 35% 25% 75%/55% 35% 65% 45%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+    <div class="wave wave5"></div>
+  </body>
+</html>

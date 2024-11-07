@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .glass-container {
+  width: 300px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); 
+  border-radius: 15px;
+  position: relative; /* Important for positioning the balls */
+  margin: 50px auto;
+}
+
+.glowing-ball {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle closest-side, rgba(255,255,255,0.6), transparent);
+  border-radius: 50%;
+  position: absolute; 
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Position the balls - adjust as needed */
+.glowing-ball:nth-child(1) { top: 30px; left: 40px; }
+.glowing-ball:nth-child(2) { top: 100px; right: 50px; }
+.glowing-ball:nth-child(3) { bottom: 20px; left: 120px; } 
+
+    </style>
+</head>
+<body>
+    <div class="glass-container">
+        <div class="glowing-ball"></div>
+        <div class="glowing-ball"></div>
+        <div class="glowing-ball"></div> 
+      </div>
+</body>
+</html>

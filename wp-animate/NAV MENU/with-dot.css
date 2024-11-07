@@ -1,0 +1,40 @@
+selector .sub-menu {
+  padding: 1rem 0;
+  padding-right: 1rem;
+}
+selector .sub-menu li a:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  height: 0.25rem;
+  width: 0.25rem;
+  background-color: var(--e-global-color-primary);
+  transition: all 200ms ease;
+  opacity: 0;
+  left: 0.8rem;
+}
+
+selector .sub-menu li:hover a:before {
+  transform: translateY(-50%) scale(1);
+  animation-delay: 300ms;
+  opacity: 1;
+}
+
+selector .sub-menu li a {
+  transition: margin-left 200ms ease;
+  margin-left: 0;
+}
+
+selector .sub-menu li:hover a {
+  margin-left: 0.7rem;
+}
+
+selector .sub-menu li {
+  transition: padding-right 200ms ease;
+  padding-right: 0.7rem;
+}
+
+selector .sub-menu li:hover {
+  padding-right: 0;
+}

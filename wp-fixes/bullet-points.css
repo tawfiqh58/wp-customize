@@ -1,0 +1,68 @@
+/* --- For: Text Heading Widget */
+selector li {
+    padding-left: 1.4em;
+    position: relative;
+    list-style-type: none;
+  }
+  
+  selector li::before {
+    content: '\2022';
+    color: white; 
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+  }
+/* --- For: Text Editor Widget */
+selector ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0.5em;
+  }
+  
+  selector li {
+    padding-left: 1.8em;
+    position: relative;
+    list-style-type: none;
+    padding-bottom: 0.5em;
+  }
+  
+  selector li::before {
+    content: '\2713';
+    color: #A6A182; 
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+  }
+
+  /* ---  */
+  .unfold-list .jet-unfold__content-inner ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0.5em;
+  }
+  
+  .unfold-list .jet-unfold__content-inner li {
+    padding-left: 1.8em;
+    position: relative;
+    list-style-type: none;
+    padding-bottom: 0.5em;
+  }
+  
+  .unfold-list .jet-unfold__content-inner li::before {
+    content: '\2713';
+    color: green; 
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+  }
+  
+  .jet-unfold__content {
+      font-size: 0.85em !important;
+      line-height: 1.5em;
+  }
+  .jet-unfold__button{
+      font-size: .85em !important;
+  }
+  .jet-unfold__mask {
+      height: auto !important;
+  }

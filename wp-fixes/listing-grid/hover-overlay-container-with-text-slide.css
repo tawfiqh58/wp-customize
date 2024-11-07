@@ -1,0 +1,18 @@
+selector .overlay .elementor-heading-title {
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+selector:hover .overlay .elementor-heading-title {
+  transform: translateY(0%);
+}
+selector .overlay {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+selector:hover .overlay {
+  opacity: 1;
+}
+selector .overlay .elementor-widget-container {
+  overflow: hidden;
+}

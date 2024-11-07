@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .nav-item:hover #cssSelector .square {
+        transform: translateX(37px);
+      }
+      .nav-item.current-menu-item #cssSelector .square {
+        transform: translateX(37px);
+      }
+
+      .nav-item.current-menu-item:hover #cssSelector .square {
+        transform: translateX(0px);
+      }
+      .nav-item.current-menu-item.removehover #cssSelector .square {
+        transform: translateX(0px);
+      }
+
+      .square {
+        pointer-events: none;
+        position: relative;
+        width: 37px;
+        height: 37px;
+        background-color: #fee34c;
+        font-size: 12px;
+        -webkit-transition: -webkit-transform 0.2s ease;
+        transition: -webkit-transform 0.2s ease;
+        -o-transition: transform 0.2s ease;
+        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+      }
+
+      .yellow-square {
+        position: absolute;
+        right: 0;
+        top: -36px;
+      }
+      .yellow-square .square {
+        background-color: #fee34c;
+        width: 36px;
+        height: 36px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="menu-item nav-item">
+      <div id="cssSelector">
+        <div class="line"><div class="square el"></div></div>
+      </div>
+      <a
+        href="https://www.ogilvielaw.com/our-team/"
+        class="menu-link nav-link main-menu-link"
+        ><span class="obj-title-desc"
+          ><span class="obj-title">Our Team</span>
+        </span></a
+      >
+    </div>
+
+    <script>
+      const button = document.querySelector('.navbar-toggler'); // Get the first element
+
+      button.addEventListener('click', function () {
+        this.classList.toggle('collapsed');
+        this.classList.toggle('open-header-nav');
+      });
+    </script>
+  </body>
+</html>

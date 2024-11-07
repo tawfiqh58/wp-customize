@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.text-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the underline */
+.text-container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Initially set to 0 */
+  height: 2px; /* Adjust the thickness of the underline as needed */
+  background-color: #000; /* Set the color of the underline */
+  transition: width 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Hover effect to expand the underline from left to right */
+.text-container:hover::before {
+  width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="text-container">
+            Book a flight
+        </p>
+    </div>
+</body>
+</html>

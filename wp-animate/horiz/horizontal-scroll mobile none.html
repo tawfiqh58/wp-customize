@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Fauna One', serif;
+      }
+      body,
+      html {
+        height: 100%;
+      }
+      .wrapper {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        perspective: 1000;
+      }
+      .sections {
+        width: 4020px;
+        background-color: red;
+      }
+      #js-slideContainer {
+        padding: 100px 0;
+      }
+
+      .card {
+        float: left;
+      }
+
+      .card {
+        width: 340px;
+        margin-right: 40px;
+      }
+
+      .card .img-wrapper {
+        height: 600px;
+        width: 100%;
+      }
+      .card .img-wrapper img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .card .content-wrapper {
+        padding-right: 20px;
+      }
+
+      .card .card-title,
+      .card .card-desc {
+        white-space: normal;
+        color: var(--e-global-color-primary);
+        font-family: 'Bowlby One', Sans-serif;
+      }
+
+      .card .card-title {
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 28px;
+        letter-spacing: 0em;
+      }
+
+      .card .card-desc {
+        white-space: normal;
+        color: #000000;
+        font-family: 'Crimson Text', Sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+      }
+
+      .text-container {
+        display: flex;
+        width: 600px;
+        align-items: center;
+      }
+      .text-container p {
+        color: #ffffff00;
+        font-family: 'Bowlby One', Sans-serif;
+        font-size: 64px;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 80px;
+        letter-spacing: 0;
+        -webkit-text-stroke-width: 1px;
+        stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+        stroke: #000;
+      }
+
+      /* Media query for mobile devices */
+      @media only screen and (max-width: 768px) {
+        .sections {
+          width: 100%;
+          display: none;
+        }
+        .scrollmagic-pin-spacer {
+          display: none !important;
+        }
+        .card {
+          width: 100%;
+          margin-right: 0;
+        }
+        .text-container {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="height: 100vh; background-color: blue"></div>
+    <div class="wrapper" id="js-wrapper">
+      <div class="sections" id="js-slideContainer">
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/8259263/pexels-photo-8259263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
+          </div>
+
+          <div class="content-wrapper">
+            <h2 class="card-title">INNOVATION STÄRKEN</h2>
+            <p class="card-desc"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/8259263/pexels-photo-8259263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
+          </div>
+
+          <div class="content-wrapper">
+            <h2 class="card-title">INNOVATION STÄRKEN</h2>
+            <p class="card-desc"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/8259263/pexels-photo-8259263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
+          </div>
+
+          <div class="content-wrapper">
+            <h2 class="card-title">INNOVATION STÄRKEN</h2>
+            <p class="card-desc"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/8259263/pexels-photo-8259263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
+          </div>
+
+          <div class="content-wrapper">
+            <h2 class="card-title">INNOVATION STÄRKEN</h2>
+            <p class="card-desc"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/8259263/pexels-photo-8259263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
+          </div>
+
+          <div class="content-wrapper">
+            <h2 class="card-title">INNOVATION STÄRKEN</h2>
+            <p class="card-desc"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/8259263/pexels-photo-8259263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
+          </div>
+
+          <div class="content-wrapper">
+            <h2 class="card-title">INNOVATION STÄRKEN</h2>
+            <p class="card-desc"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/8259263/pexels-photo-8259263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
+          </div>
+
+          <div class="content-wrapper">
+            <h2 class="card-title">INNOVATION STÄRKEN</h2>
+            <p class="card-desc"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/8259263/pexels-photo-8259263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
+          </div>
+
+          <div class="content-wrapper">
+            <h2 class="card-title">INNOVATION STÄRKEN</h2>
+            <p class="card-desc"></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://images.pexels.com/photos/8259263/pexels-photo-8259263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
+          </div>
+
+          <div class="content-wrapper">
+            <h2 class="card-title">INNOVATION STÄRKEN</h2>
+            <p class="card-desc"></p>
+          </div>
+        </div>
+
+        <!-- Text at the End-->
+        <div class="text-container">
+          <p>
+            Mit Innovation in die Zukunft.<br />
+            Mit einem neuen "Wir" zum Erfolg.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div style="height: 100vh; background-color: black"></div>
+
+    <script>
+      TweenLite.defaultEase = Linear.easeNone;
+      $(function () {
+        // wait for document ready
+
+        var controller = new ScrollMagic.Controller();
+
+        var horizontalSlide = new TimelineMax()
+          // animate panels
+          .to('#js-slideContainer', 1, { x: '-20%' }, 'label1')
+          .to('#js-slideContainer', 1, { x: '-40%' }, 'label2')
+          .to('#js-slideContainer', 1, { x: '-60%' }, 'label3')
+          .to('#js-slideContainer', 1, { x: '-80%' }, 'label4');
+
+        // create scene to pin and link animation
+        new ScrollMagic.Scene({
+          triggerElement: '#js-wrapper',
+          triggerHook: 'onLeave',
+          duration: '400%',
+        })
+          .setPin('#js-wrapper')
+          .setTween(horizontalSlide)
+          .addTo(controller);
+      });
+    </script>
+  </body>
+</html>

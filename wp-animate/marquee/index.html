@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .marquee-track-nav.is-vertical.is-opposite {
+    will-change: transform;
+    animation: marquee-vertical-alt 60s linear infinite;
+}
+
+.marquee-track-nav.is-vertical.is-slower {
+    will-change: transform;
+    animation: marquee-vertical 60s linear infinite;
+}
+
+.marquee-track-nav.is-vertical.is-opposite.is-slower {
+    will-change: transform;
+    animation: marquee-vertical-alt 60s linear infinite;
+}
+
+@keyframes marquee-vertical-alt {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes marquee-vertical {
+    from {
+        transform: translateY(-50%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+/* --- */
+                    .marquee-track.is-vertical {
+                        will-change: transform;
+                        animation: marquee-vertical 60s linear infinite;
+                    }
+
+                    @keyframes marquee-vertical {
+                        from {
+                            transform: translateY(-50%);
+                        }
+
+                        to {
+                            transform: translateY(0%);
+                        }
+                    }
+
+                    .marquee-track.is-vertical.is-opposite {
+                        will-change: transform;
+                        animation: marquee-vertical-alt 60s linear infinite;
+                    }
+
+                    @keyframes marquee-vertical-alt {
+                        from {
+                            transform: translateY(0);
+                        }
+
+                        to {
+                            transform: translateY(-50%);
+                        }
+                    }
+
+                    .marquee-track.is-vertical.is-slower {
+                        will-change: transform;
+                        animation: marquee-vertical 140s linear infinite;
+                    }
+
+                    .marquee-track.is-vertical.is-opposite.is-slower {
+                        will-change: transform;
+                        animation: marquee-vertical-alt 140s linear infinite;
+                    }
+
+                    .marquee-track-horizontal {
+                        will-change: transform;
+                        animation-play-state: running;
+                        animation: marquee-horizontal 140s linear infinite !important;
+                    }
+
+                    @keyframes marquee-horizontal {
+                        from {
+                            transform: translateX(0%);
+                        }
+
+                        to {
+                            transform: translateX(-50%);
+                        }
+                    }
+
+                    .marquee-track-horizontal-reverse {
+                        will-change: transform;
+                        animation-play-state: running;
+                        animation: marquee-horizontal-reverse 140s linear infinite !important;
+                    }
+
+                    @keyframes marquee-horizontal-reverse {
+                        from {
+                            transform: translateX(-50%);
+                        }
+
+                        to {
+                            transform: translateX(0%);
+                        }
+                    }
+
+                    @media (prefers-reduced-motion) {
+                        .marquee-track-horizontal-reverse, .marquee-track-horizontal, .marquee-track.is-vertical.is-opposite.is-slower, .marquee-track.is-vertical.is-slower, .marquee-track.is-vertical.is-opposite, .marquee-track.is-vertical {
+                            animation-play-state: paused !important;
+                        }
+                    }
+
+                    /* --- */
+                    /* marquee styles */
+                    .marquee-track {
+                        will-change: transform;
+                        animation-play-state: running;
+                        animation: marquee-horizontal 120s linear infinite;
+                    }
+    
+                    .marquee-track.is-slower {
+                        animation: marquee-horizontal 200s linear infinite !important;
+                    }
+    
+                    @keyframes marquee-horizontal {
+                        from {
+                            transform: translateX(0);
+                        }
+    
+                        to {
+                            transform: translateX(-50%);
+                        }
+                    }
+    
+                    .marquee-track:hover {
+                        animation-play-state: paused;
+                    }
+        </style>
+</head>
+<body>
+    <div class="vertical-marquee-container is-nav">
+        <div aria-hidden="true" class="marquee is-slow-vertical">
+            <div class="marquee-track-nav is-vertical is-slower">
+                <div class="marquee-content is-vertical">
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    Understanding the White House &#x27;s AI Executive Order<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    AI for Business: 110+ AI Prompts to Power your Organization<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    Enterprise AI: The Complete Guide to AI for Organizations [2024]<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="marquee-content is-vertical">
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    Understanding the White House &#x27;s AI Executive Order<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    AI for Business: 110+ AI Prompts to Power your Organization<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    Enterprise AI: The Complete Guide to AI for Organizations [2024]<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="marquee-content is-vertical">
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    Understanding the White House &#x27;s AI Executive Order<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    AI for Business: 110+ AI Prompts to Power your Organization<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    Enterprise AI: The Complete Guide to AI for Organizations [2024]<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="marquee-content is-vertical">
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c69754969f359d44915_White%20House.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    Understanding the White House &#x27;s AI Executive Order<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674bfe158fdf88b24178df_642495592b8e6f107e67b468_ai%20prompts%20for%20business%20-%20header.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    AI for Business: 110+ AI Prompts to Power your Organization<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card xs has-shadow">
+                        <div class="flex vertical gap-0 justify-center">
+                            <div class="aspect-ratio border-radius-s">
+                                <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header.webp 960w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674c2889ded3f597ab4a1c_646d1943a9203b4455b95fe2_ai%20for%20enterprise%20-%20header.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                            </div>
+                            <div class="padding-bottom---xs"></div>
+                            <div>
+                                <div class="headline xxs text-align-left">
+                                    Enterprise AI: The Complete Guide to AI for Organizations [2024]<br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+        <div class="vertical-marquee-container is-nav is-reverse-tab">
+            <div aria-hidden="true" class="marquee is-slow-vertical">
+                <div class="marquee-track-nav is-slower is-vertical is-opposite">
+                    <div class="marquee-content is-vertical">
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">800%</div>
+                                            <div class="text---neutral-2">Surge in website traffic</div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-500.png 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-800.png 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-1080.png 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces.webp 2936w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces.webp" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">
+                                                <strong>50%</strong>
+                                            </div>
+                                            <div class="text---neutral-2">
+                                                faster SEO blog writing<br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749fe57f7d1a23dfa2332_2x.webp" loading="lazy" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">
+                                                <strong>88%</strong>
+                                            </div>
+                                            <div class="text---neutral-2">
+                                                reduction in cost vs. traditional writing methods<br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image.webp 1498w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-500.png 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-800.png 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-1080.png 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude.webp" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="marquee-content is-vertical">
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">800%</div>
+                                            <div class="text---neutral-2">Surge in website traffic</div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-500.png 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-800.png 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-1080.png 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces.webp 2936w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces.webp" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">
+                                                <strong>50%</strong>
+                                            </div>
+                                            <div class="text---neutral-2">
+                                                faster SEO blog writing<br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749fe57f7d1a23dfa2332_2x.webp" loading="lazy" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">
+                                                <strong>88%</strong>
+                                            </div>
+                                            <div class="text---neutral-2">
+                                                reduction in cost vs. traditional writing methods<br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image.webp 1498w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-500.png 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-800.png 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-1080.png 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude.webp" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="marquee-content is-vertical">
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">800%</div>
+                                            <div class="text---neutral-2">Surge in website traffic</div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-500.png 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-800.png 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-1080.png 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces.webp 2936w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces.webp" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">
+                                                <strong>50%</strong>
+                                            </div>
+                                            <div class="text---neutral-2">
+                                                faster SEO blog writing<br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749fe57f7d1a23dfa2332_2x.webp" loading="lazy" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">
+                                                <strong>88%</strong>
+                                            </div>
+                                            <div class="text---neutral-2">
+                                                reduction in cost vs. traditional writing methods<br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image.webp 1498w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-500.png 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-800.png 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-1080.png 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude.webp" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="marquee-content is-vertical">
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">800%</div>
+                                            <div class="text---neutral-2">Surge in website traffic</div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567494fa8566fa3fadf2a82_Bestplaces%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-500.png 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-800.png 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces-p-1080.png 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces.webp 2936w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749789665fa68121223bf_64e75f08b0002d80ba153ffb_Bestplaces.webp" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">
+                                                <strong>50%</strong>
+                                            </div>
+                                            <div class="text---neutral-2">
+                                                faster SEO blog writing<br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a223a6373915941e356_2x%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/656749fe57f7d1a23dfa2332_2x.webp" loading="lazy" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical gap-0 justify-center">
+                                <div class="aspect-ratio border-radius-s">
+                                    <div class="position-absolute---center z-20 full-width padding-x---xxs">
+                                        <div class="center full-width">
+                                            <div class="headline xl line-height-100 padding-bottom---xxs text---white">
+                                                <strong>88%</strong>
+                                            </div>
+                                            <div class="text---neutral-2">
+                                                reduction in cost vs. traditional writing methods<br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gradient-overlay"></div>
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image.webp 1498w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a93ba79a68b7af9e9a6_Amplitude%20Image.webp" alt="" class="position-absolute---full full-width-and-height object-fit"/>
+                                </div>
+                                <div class="padding-bottom---xs"></div>
+                                <div class="flex full-width justify-center">
+                                    <img srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-500.png 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-800.png 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude-p-1080.png 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude.webp 1600w" loading="lazy" sizes="100vw" src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/65674a8e28c48dca7ca3b0d9_Amplitude.webp" alt="" class="logos is-aligned-left"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="vertical-marquee-container is-nav">
+            <div aria-hidden="true" class="marquee is-slow-vertical">
+                <div class="marquee-track-nav is-vertical is-slower">
+                    <div class="marquee-content is-vertical">
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    “It &#x27;s not just about faster content, but about higher audience engagement. Jasper has helped us build quality social media <span class="text---quinary-dark">content that’s driving double-digit growth</span>
+                                    in downloads.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c05ae4171f39a0d58c5f_TPb9PyKN_400x400.jpg" alt="A headshot of Steve Bendt, CMO at Morningstar" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Steve Bendt</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Chief Marketing Officer<br/>Morningstar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    “The <span class="text---secondary">content was high-quality </span>
+                                    and we felt confident launching in weeks, rather than months. It gave us the opportunity to publish quickly and then monitor.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835.jpg" alt="A headshot of Scott Mathson from Amplitude" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835.jpg 720w" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Scott Mathson</div>
+                                        </div>
+                                        <div class="body-small">Senior Growth Marketing &amp;SEO Manager, Amplitude</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xx">
+                                    “Jasper has allowed us to increase our content production with a small team. Its <span class="text---quinary-dark">easy to use platform</span>
+                                    makes it seamless for us to learn different resources within it.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder.jpg" alt="" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder.jpg 597w" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Leslyn Felder</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Marketing Associate<br/>Goosehead Insurance
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    &quot;Jasper Everywhere is a game changer for me. <span class="text---quaternary-dark">I can brainstorm, build, repurpose or rephrase content on the fly right in the document I’m working on,</span>
+                                    saving toggle time or copy/paste hassle. &quot;-  
+                                </div>
+                                <div class="flex gap-s align-center">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay.jpg" loading="lazy" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay.jpg 800w" alt="A headshot of Corinne Gabay, Head of Marketing Programs at WalkMe" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Corinne Gabay</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Head of Marketing Programs<br/>WalkMe
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="marquee-content is-vertical">
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    “It &#x27;s not just about faster content, but about higher audience engagement. Jasper has helped us build quality social media <span class="text---quinary-dark">content that’s driving double-digit growth</span>
+                                    in downloads.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c05ae4171f39a0d58c5f_TPb9PyKN_400x400.jpg" alt="A headshot of Steve Bendt, CMO at Morningstar" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Steve Bendt</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Chief Marketing Officer<br/>Morningstar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    “The <span class="text---secondary">content was high-quality </span>
+                                    and we felt confident launching in weeks, rather than months. It gave us the opportunity to publish quickly and then monitor.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835.jpg" alt="A headshot of Scott Mathson from Amplitude" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835.jpg 720w" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Scott Mathson</div>
+                                        </div>
+                                        <div class="body-small">Senior Growth Marketing &amp;SEO Manager, Amplitude</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xx">
+                                    “Jasper has allowed us to increase our content production with a small team. Its <span class="text---quinary-dark">easy to use platform</span>
+                                    makes it seamless for us to learn different resources within it.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder.jpg" alt="" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder.jpg 597w" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Leslyn Felder</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Marketing Associate<br/>Goosehead Insurance
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    &quot;Jasper Everywhere is a game changer for me. <span class="text---quaternary-dark">I can brainstorm, build, repurpose or rephrase content on the fly right in the document I’m working on,</span>
+                                    saving toggle time or copy/paste hassle. &quot;-  
+                                </div>
+                                <div class="flex gap-s align-center">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay.jpg" loading="lazy" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay.jpg 800w" alt="A headshot of Corinne Gabay, Head of Marketing Programs at WalkMe" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Corinne Gabay</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Head of Marketing Programs<br/>WalkMe
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="marquee-content is-vertical">
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    “It &#x27;s not just about faster content, but about higher audience engagement. Jasper has helped us build quality social media <span class="text---quinary-dark">content that’s driving double-digit growth</span>
+                                    in downloads.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c05ae4171f39a0d58c5f_TPb9PyKN_400x400.jpg" alt="A headshot of Steve Bendt, CMO at Morningstar" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Steve Bendt</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Chief Marketing Officer<br/>Morningstar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    “The <span class="text---secondary">content was high-quality </span>
+                                    and we felt confident launching in weeks, rather than months. It gave us the opportunity to publish quickly and then monitor.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835.jpg" alt="A headshot of Scott Mathson from Amplitude" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835.jpg 720w" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Scott Mathson</div>
+                                        </div>
+                                        <div class="body-small">Senior Growth Marketing &amp;SEO Manager, Amplitude</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xx">
+                                    “Jasper has allowed us to increase our content production with a small team. Its <span class="text---quinary-dark">easy to use platform</span>
+                                    makes it seamless for us to learn different resources within it.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder.jpg" alt="" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder.jpg 597w" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Leslyn Felder</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Marketing Associate<br/>Goosehead Insurance
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    &quot;Jasper Everywhere is a game changer for me. <span class="text---quaternary-dark">I can brainstorm, build, repurpose or rephrase content on the fly right in the document I’m working on,</span>
+                                    saving toggle time or copy/paste hassle. &quot;-  
+                                </div>
+                                <div class="flex gap-s align-center">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay.jpg" loading="lazy" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay.jpg 800w" alt="A headshot of Corinne Gabay, Head of Marketing Programs at WalkMe" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Corinne Gabay</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Head of Marketing Programs<br/>WalkMe
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="marquee-content is-vertical">
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    “It &#x27;s not just about faster content, but about higher audience engagement. Jasper has helped us build quality social media <span class="text---quinary-dark">content that’s driving double-digit growth</span>
+                                    in downloads.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c05ae4171f39a0d58c5f_TPb9PyKN_400x400.jpg" alt="A headshot of Steve Bendt, CMO at Morningstar" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Steve Bendt</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Chief Marketing Officer<br/>Morningstar
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    “The <span class="text---secondary">content was high-quality </span>
+                                    and we felt confident launching in weeks, rather than months. It gave us the opportunity to publish quickly and then monitor.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835.jpg" alt="A headshot of Scott Mathson from Amplitude" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6528c0dd168ccacfd3b9e1fd_1679030708835.jpg 720w" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Scott Mathson</div>
+                                        </div>
+                                        <div class="body-small">Senior Growth Marketing &amp;SEO Manager, Amplitude</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xx">
+                                    “Jasper has allowed us to increase our content production with a small team. Its <span class="text---quinary-dark">easy to use platform</span>
+                                    makes it seamless for us to learn different resources within it.”
+                                </div>
+                                <div class="flex gap-s">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder.jpg" alt="" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64baa3b08a17fb2e0ddf1288_Leslyn%20Felder.jpg 597w" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Leslyn Felder</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Marketing Associate<br/>Goosehead Insurance
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card xs has-shadow">
+                            <div class="flex vertical">
+                                <div class="headline xxs">
+                                    &quot;Jasper Everywhere is a game changer for me. <span class="text---quaternary-dark">I can brainstorm, build, repurpose or rephrase content on the fly right in the document I’m working on,</span>
+                                    saving toggle time or copy/paste hassle. &quot;-  
+                                </div>
+                                <div class="flex gap-s align-center">
+                                    <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay.jpg" loading="lazy" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay-p-500.jpg 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/652f2ce9428cda7c22b68a4e_Corinne%20Gabay.jpg 800w" alt="A headshot of Corinne Gabay, Head of Marketing Programs at WalkMe" class="testimonial-headshot is-xs"/>
+                                    <div>
+                                        <div class="margin-bottom---5">
+                                            <div class="body-small bold">Corinne Gabay</div>
+                                        </div>
+                                        <div class="body-small">
+                                            Head of Marketing Programs<br/>WalkMe
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="marquee position-relative pointer-none">
+            <div class="marquee-track-horizontal">
+                <div class="marquee-content">
+                    <div class="position-relative">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge.webp" loading="eager" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-1600.webp 1600w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-2000.webp 2000w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-2600.webp 2600w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-3200.webp 3200w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge.webp 4022w" alt="" class="pillar-marquee-image"/>
+                        <div data-poster-url="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-poster-00001.jpg" data-video-urls="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.mp4,https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="company-knowledge-2 w-background-video w-background-video-atom">
+                            <video id="37106ec1-f940-79b1-57e2-287bb0865064-video" autoplay="" loop="" style="background-image:url(&quot;https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.mp4" data-wf-ignore="true"/>
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.webm" data-wf-ignore="true"/>
+                            </video>
+                        </div>
+                        <div data-poster-url="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-poster-00001.jpg" data-video-urls="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.mp4,https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="company-knowledge-1 w-background-video w-background-video-atom">
+                            <video id="37106ec1-f940-79b1-57e2-287bb0865065-video" autoplay="" loop="" style="background-image:url(&quot;https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.mp4" data-wf-ignore="true"/>
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.webm" data-wf-ignore="true"/>
+                            </video>
+                        </div>
+                    </div>
+                    <div class="position-relative">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge.webp" loading="eager" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-1600.webp 1600w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-2000.webp 2000w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-2600.webp 2600w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-3200.webp 3200w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge.webp 4022w" alt="" class="pillar-marquee-image"/>
+                        <div data-poster-url="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-poster-00001.jpg" data-video-urls="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.mp4,https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="company-knowledge-2 w-background-video w-background-video-atom">
+                            <video id="db8428fe-20a5-3429-7cca-5eae61bdf6d1-video" autoplay="" loop="" style="background-image:url(&quot;https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.mp4" data-wf-ignore="true"/>
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.webm" data-wf-ignore="true"/>
+                            </video>
+                        </div>
+                        <div data-poster-url="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-poster-00001.jpg" data-video-urls="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.mp4,https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="company-knowledge-1 w-background-video w-background-video-atom">
+                            <video id="db8428fe-20a5-3429-7cca-5eae61bdf6d2-video" autoplay="" loop="" style="background-image:url(&quot;https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.mp4" data-wf-ignore="true"/>
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.webm" data-wf-ignore="true"/>
+                            </video>
+                        </div>
+                    </div>
+                    <div class="position-relative">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge.webp" loading="eager" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-1600.webp 1600w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-2000.webp 2000w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-2600.webp 2600w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-3200.webp 3200w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge.webp 4022w" alt="" class="pillar-marquee-image"/>
+                        <div data-poster-url="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-poster-00001.jpg" data-video-urls="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.mp4,https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="company-knowledge-2 w-background-video w-background-video-atom">
+                            <video id="56927beb-35e6-c892-c6cc-a749b341eb6f-video" autoplay="" loop="" style="background-image:url(&quot;https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.mp4" data-wf-ignore="true"/>
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.webm" data-wf-ignore="true"/>
+                            </video>
+                        </div>
+                        <div data-poster-url="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-poster-00001.jpg" data-video-urls="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.mp4,https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="company-knowledge-1 w-background-video w-background-video-atom">
+                            <video id="56927beb-35e6-c892-c6cc-a749b341eb70-video" autoplay="" loop="" style="background-image:url(&quot;https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.mp4" data-wf-ignore="true"/>
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.webm" data-wf-ignore="true"/>
+                            </video>
+                        </div>
+                    </div>
+                    <div class="position-relative">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge.webp" loading="eager" sizes="100vw" srcset="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-500.webp 500w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-800.webp 800w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-1080.webp 1080w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-1600.webp 1600w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-2000.webp 2000w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-2600.webp 2600w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge-p-3200.webp 3200w, https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6563ffac0eedb971ae39dd3e_Company%20Knowledge.webp 4022w" alt="" class="pillar-marquee-image"/>
+                        <div data-poster-url="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-poster-00001.jpg" data-video-urls="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.mp4,https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="company-knowledge-2 w-background-video w-background-video-atom">
+                            <video id="8cdd02a4-4a07-14db-ff4a-1519132f73c6-video" autoplay="" loop="" style="background-image:url(&quot;https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.mp4" data-wf-ignore="true"/>
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d731598255027906621a_470859_Man Earphones Talking Laptop_By_M-ART_Production_Artlist_HD (1)-transcode.webm" data-wf-ignore="true"/>
+                            </video>
+                        </div>
+                        <div data-poster-url="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-poster-00001.jpg" data-video-urls="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.mp4,https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="company-knowledge-1 w-background-video w-background-video-atom">
+                            <video id="8cdd02a4-4a07-14db-ff4a-1519132f73c7-video" autoplay="" loop="" style="background-image:url(&quot;https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.mp4" data-wf-ignore="true"/>
+                                <source src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6526d9960453cc6ed8d572a2_e64ef3a6-41f7-4a48-828d-abf5abdaacf9-transcode.webm" data-wf-ignore="true"/>
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="marquee">
+            
+            <div class="marquee-gradient is-white pointer-none"></div>
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64d4e92e25e2b930830e3cfa_Amplitude%20Logo.svg" loading="lazy" alt="Amplitude Logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f015c5adf2f23b505247_Vayner%20Media%20Logo.svg" loading="lazy" alt="Vayner Media logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0150e1dfb4e8bab6126_SentinelOne%20Logo.svg" loading="lazy" alt="Sentinel One logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567608b00ee11079d9f9cc3_Wayfair.svg" loading="lazy" alt="Wayfair logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f015c767e83e6422c8bd_Keller%20Williams%20Realty%20Logo.svg" loading="lazy" alt="Keller Williams logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0150981136182c7613b_Morningstar%20Logo.svg" loading="lazy" alt="Morningstar logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0149549fb5645d8a0e7_HubSpot%20Logo.svg" loading="lazy" alt="Hubspot logo" class="logos"/>
+                    </div>
+                </div>
+                <div class="marquee-content">
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64d4e92e25e2b930830e3cfa_Amplitude%20Logo.svg" loading="lazy" alt="Amplitude Logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f015c5adf2f23b505247_Vayner%20Media%20Logo.svg" loading="lazy" alt="Vayner Media logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0150e1dfb4e8bab6126_SentinelOne%20Logo.svg" loading="lazy" alt="Sentinel One logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567608b00ee11079d9f9cc3_Wayfair.svg" loading="lazy" alt="Wayfair logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f015c767e83e6422c8bd_Keller%20Williams%20Realty%20Logo.svg" loading="lazy" alt="Keller Williams logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0150981136182c7613b_Morningstar%20Logo.svg" loading="lazy" alt="Morningstar logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0149549fb5645d8a0e7_HubSpot%20Logo.svg" loading="lazy" alt="Hubspot logo" class="logos"/>
+                    </div>
+                </div>
+                <div class="marquee-content">
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64d4e92e25e2b930830e3cfa_Amplitude%20Logo.svg" loading="lazy" alt="Amplitude Logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f015c5adf2f23b505247_Vayner%20Media%20Logo.svg" loading="lazy" alt="Vayner Media logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0150e1dfb4e8bab6126_SentinelOne%20Logo.svg" loading="lazy" alt="Sentinel One logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567608b00ee11079d9f9cc3_Wayfair.svg" loading="lazy" alt="Wayfair logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f015c767e83e6422c8bd_Keller%20Williams%20Realty%20Logo.svg" loading="lazy" alt="Keller Williams logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0150981136182c7613b_Morningstar%20Logo.svg" loading="lazy" alt="Morningstar logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0149549fb5645d8a0e7_HubSpot%20Logo.svg" loading="lazy" alt="Hubspot logo" class="logos"/>
+                    </div>
+                </div>
+                <div class="marquee-content">
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64d4e92e25e2b930830e3cfa_Amplitude%20Logo.svg" loading="lazy" alt="Amplitude Logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f015c5adf2f23b505247_Vayner%20Media%20Logo.svg" loading="lazy" alt="Vayner Media logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0150e1dfb4e8bab6126_SentinelOne%20Logo.svg" loading="lazy" alt="Sentinel One logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/6567608b00ee11079d9f9cc3_Wayfair.svg" loading="lazy" alt="Wayfair logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f015c767e83e6422c8bd_Keller%20Williams%20Realty%20Logo.svg" loading="lazy" alt="Keller Williams logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0150981136182c7613b_Morningstar%20Logo.svg" loading="lazy" alt="Morningstar logo" class="logos"/>
+                    </div>
+                    <div class="padding-x---xs">
+                        <img src="https://assets-global.website-files.com/60e5f2de011b86acebc30db7/64b6f0149549fb5645d8a0e7_HubSpot%20Logo.svg" loading="lazy" alt="Hubspot logo" class="logos"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+function dynamic_webhook_post_submit($record) {
+    $provider_id = $record['provider_id']; 
+
+    // Fetch the dynamic webhook URL
+    $webhook_url = get_post_meta($provider_id, 'webhooks-url', true);
+
+    // Ensure a valid webhook URL is retrieved
+    if (empty($webhook_url)) {
+      // Handle the case where there's no webhook URL defined (log error, etc.)
+      return; 
+    }
+
+    // ... Your existing code, with a few changes 
+
+    $apiUrl = $webhook_url; // Replace with the dynamic webhook_url
+
+    // ... (Rest of the code remains largely the same)
+
+    $data = @file_get_contents($apiUrl, false, stream_context_create([
+        'http' => [
+            'method' => 'POST',
+            'header' => $headers,
+            'content' => json_encode($record), // Send the entire $record
+        ]
+    ]));
+
+    // ... 
+}
+
+add_action('jet-form-builder/custom-action/dynamic-webhook', 'dynamic_webhook_post_submit'); 

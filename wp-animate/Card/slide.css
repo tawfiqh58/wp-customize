@@ -1,0 +1,48 @@
+selector .text-container {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+selector:hover .text-container {
+  top: 0;
+}
+
+selector:hover {
+  box-shadow: 0.35em 0.35em 0 #ab003d;
+}
+
+selector .slide-number {
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-delay: 300ms;
+}
+selector:hover .slide-number {
+  transform: translateX(100%);
+  font-size: 0;
+  transition-delay: 0ms;
+}
+
+selector .img-box {
+  transform-origin: top right;
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-delay: 300ms;
+}
+
+selector:hover .img-box {
+  transform: scale(0);
+  transition-delay: 0ms;
+}
+
+selector .hover-big-img {
+  transform-origin: bottom;
+  transition: all 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
+  clip-path: inset(0 100% 0 0);
+  transform: translateX(30px);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+selector:hover .hover-big-img {
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+  -webkit-transform: translateX(0);
+  transition-delay: 300ms;
+  transform: translateX(0);
+}

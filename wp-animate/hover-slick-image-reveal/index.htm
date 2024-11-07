@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #blog-effects {
+        position: relative;
+        z-index: 15;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+        padding-top: 40px;
+        margin: 0 auto;
+      }
+
+      #blog-effects article .hover-reveal {
+        position: fixed;
+        width: 400px;
+        height: 250px;
+        pointer-events: none;
+        opacity: 0;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="blog-effects">
+      <article class="has-post-thumbnail">
+        <div class="hover-reveal">
+          <div class="hover-reveal__inner">
+            <div class="hover-reveal__img">
+              <img
+                decoding="async"
+                src="https://likelode.com/wp-content/uploads/2024/01/xmedia-highlight.jpg"
+                alt="X Media"
+              />
+            </div>
+          </div>
+
+          <div>Hover Image Animation</div>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

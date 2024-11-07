@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .hexagon {
+      width: 200px;
+      height: 115.5px;
+      background-color: #3498db; /* Set your desired background color */
+      position: relative;
+      margin: 50px; /* Adjust margin as needed */
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    }
+
+    .inner-content {
+      text-align: center;
+      color: white; /* Set text color */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="hexagon">
+    <div class="inner-content">
+      Your Content Here
+    </div>
+  </div>
+</body>
+</html>

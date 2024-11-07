@@ -1,0 +1,8 @@
+selector .jet-form-builder__field-label.for-checkbox span {
+  display: flex;
+  align-items: start;
+}
+
+selector .jet-form-builder__field-label.for-checkbox span::before {
+  margin-top: 0.3em;
+}

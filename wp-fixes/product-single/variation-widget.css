@@ -1,0 +1,56 @@
+selector .input-text.qty.text {
+  min-width: 5rem;
+}
+
+selector .label {
+  display: none;
+}
+selector .woo-variation-items-wrapper {
+  padding: 0;
+  background-color: white;
+}
+
+/* by emran */
+
+selector .variations {
+  background-color: white;
+}
+
+selector .variations th.label {
+  padding: 0;
+  background-color: white;
+}
+
+selector .woo-variation-items-wrapper {
+  padding: 0;
+  background-color: white;
+}
+
+.variations th.label {
+  font-family: "Netto Pro", Sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.reset_variations {
+  font-size: 0.85rem !important;
+}
+selector .variable-items-wrapper .variable-item {
+  background-color: #f2f2f2 !important;
+  border: none;
+  box-shadow: none;
+  border-radius: 0.35rem;
+}
+
+selector .variable-items-wrapper .variable-item.selected {
+  background-color: #000 !important;
+}
+selector
+  .variable-items-wrapper
+  .variable-item.selected
+  .variable-item-contents {
+  color: white;
+}
+
+selector .variable-item-contents {
+  padding: 0.7rem 1rem;
+}

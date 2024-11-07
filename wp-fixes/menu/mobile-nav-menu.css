@@ -1,0 +1,6 @@
+selector .elementor-nav-menu--dropdown {
+  top: 2rem !important;
+}
+selector .elementor-nav-menu--dropdown .elementor-nav-menu {
+  padding-top: 1rem;
+}

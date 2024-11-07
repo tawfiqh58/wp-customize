@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riccardo Zaffalon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+        
+        :root {
+            --primary: #111;
+        }
+
+        body {
+            background: #fafafa;	
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 40rem;
+            margin: 4rem auto;
+            text-align: right;
+        }
+
+        h1 {
+            display: none;
+            font-size: 6rem;
+            line-height: 1;
+            margin-bottom: 0.15em;
+            font-weight: 500;
+            letter-spacing: 4px;
+            clip-path: inset(0px 0px 0px 0px);
+        }
+
+        h1:last-of-type {
+            margin-bottom: 0;
+        }
+
+        button {
+            font-family: 'Poppins', sans-serif;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="restart">Restart</button>
+    <div class="container">
+        <h1>Riccardo</h1>
+        <h1>Zaffalon</h1>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script>
+        const h1s = document.querySelectorAll('h1');
+
+        h1s.forEach(h1 => {
+            h1.style.display = 'block';
+        });
+
+        const splitter = new SplitType(h1s, { types: 'chars' });
+        const letters = document.querySelectorAll('.char');
+
+        const to = gsap.from(letters, {
+        // opacity: 0,
+		// y: 20,
+		// duration: 4,
+		// stagger: { amount: 0.4 },
+            y: 100,
+            rotation: 10,
+            duration: .5,
+            stagger: 0.04,
+            ease: 'ease.inOut'
+        });
+
+        document.getElementById('restart').addEventListener('click', () => {
+            to.restart();
+        });
+    </script>
+</body>
+</html>

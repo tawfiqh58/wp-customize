@@ -1,0 +1,12 @@
+.e-woocommerce-notices-wrapper .woocommerce-message {
+  border-top: none;
+  border: 1px solid pink;
+  border-radius: 6px;
+}
+.e-woocommerce-notices-wrapper .woocommerce-message .button {
+  background-color: pink;
+}
+
+.woocommerce-message::before {
+  color: var(--e-global-color-primary);
+}

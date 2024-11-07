@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollToPlugin.min.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .panel {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .panel p {
+        font-size: 6vw;
+      }
+
+      .red {
+        background: red;
+      }
+
+      .blue {
+        background: blue;
+      }
+
+      .green {
+        background: green;
+      }
+
+      .orange {
+        background: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="panel red">
+      <p>This is page 1</p>
+    </section>
+    <section class="panel green">
+      <p>This is page 2</p>
+    </section>
+    <section class="panel blue">
+      <p>This is page 3</p>
+    </section>
+    <section class="panel orange">
+      <p>This is page 4</p>
+    </section>
+    <script>
+      (function () {
+        // wait until gsap & ScrollTrigger available
+        let chck_if_gsap_loaded = setInterval(function () {
+          if (window.gsap && window.ScrollTrigger) {
+            // register scrolTrigger
+            gsap.registerPlugin(ScrollTrigger);
+
+            // ... do your thing
+            my_stuff();
+
+            // clear interval
+            clearInterval(chck_if_gsap_loaded);
+          }
+        }, 300);
+
+        function my_stuff() {
+          // My CODE
+          gsap.registerPlugin(ScrollTrigger);
+          gsap.registerPlugin(ScrollToPlugin);
+
+          let sections = gsap.utils.toArray(".panel");
+
+          function goToSection(i) {
+            gsap.to(window, {
+              scrollTo: {
+                y: i * innerHeight,
+                autoKill: false,
+                ease: "Power3.easeInOut",
+              },
+              duration: 0.85,
+            });
+          }
+
+          ScrollTrigger.defaults({
+            // markers: true
+          });
+
+          sections.forEach((eachPanel, i) => {
+            // const mainAnim = gsap.timeline({ paused: true });
+
+            ScrollTrigger.create({
+              trigger: eachPanel,
+              onEnter: () => goToSection(i),
+            });
+
+            let isScrolling = false;
+
+            ScrollTrigger.create({
+              trigger: eachPanel,
+              start: "bottom bottom",
+              onEnterBack: () => goToSection(i),
+            });
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

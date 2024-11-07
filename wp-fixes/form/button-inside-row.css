@@ -1,0 +1,24 @@
+selector .wp-container-core-columns-is-layout-1 {
+  gap: 0;
+  background-color: #fff;
+  padding: 0.4rem 0.4rem;
+  border-radius: 0.25rem;
+}
+selector .jet-form-builder-row {
+  padding: 0;
+}
+
+selector .wp-container-core-columns-is-layout-1 > *:first-child {
+  display: flex;
+  align-items: center;
+}
+
+selector
+  .wp-container-core-columns-is-layout-1
+  > *:first-child
+  .field-type-text-field {
+  flex-grow: 1;
+}
+selector .jet-form-builder__submit-wrap {
+  justify-content: flex-end;
+}

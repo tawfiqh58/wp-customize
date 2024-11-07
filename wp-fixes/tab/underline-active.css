@@ -1,0 +1,13 @@
+.elementor-tab-title.elementor-active {
+  font-weight: 700 !important;
+}
+.elementor-widget-tabs.elementor-tabs-view-horizontal
+  .elementor-tab-desktop-title.elementor-active {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 3px solid #111111 !important;
+}
+.elementor-widget-tabs .elementor-tab-content {
+  padding: 3% 10% 3% 10% !important;
+}

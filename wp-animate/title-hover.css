@@ -1,0 +1,56 @@
+<style>
+#hero-1, #hero-2, #hero-3 {
+  cursor: pointer;
+}
+#content-hero-1, #content-hero-2, #content-hero-3 {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.white-stroke {
+    -webkit-text-stroke-color: #fff !important;
+  stroke: #fff !important;
+}
+
+.red-stroke {
+    -webkit-text-stroke-color: #E06DFF !important;
+    stroke: #E06DFF !important;
+}
+.elementor-widget.main-heading.white-stroke h2 {
+    -webkit-text-stroke-color: #fff !important;
+    stroke: #fff !important;
+}
+</style>
+<script>
+const heroTitle = document.querySelector('.main-heading');
+    const heroElements = document.querySelectorAll('[id^="hero-"]');
+const contentElements = document.querySelectorAll('[id^="content-hero-"]');
+
+heroElements.forEach((hero, index) => {
+    hero.addEventListener('mouseover', () => {
+        
+        heroTitle.classList.add("white-stroke");
+        if(index==1){
+            hero.style.color = 'white';
+            hero.classList.add("white-stroke");
+        } else {
+            hero.style.color = 'white';
+            hero.classList.add("white-stroke");
+        }
+        contentElements.forEach(content => content.style.opacity = 0);
+
+        contentElements[index].style.opacity = 1; 
+    });
+
+    hero.addEventListener('mouseout', () => {
+        hero.style.color = 'transparent';
+        heroTitle.classList.remove("white-stroke");
+        if(index==1){
+            hero.classList.remove("white-stroke");
+        } else {
+            hero.classList.remove("white-stroke");
+        }
+        contentElements.forEach(content => content.style.opacity = 0); 
+    });
+});
+</script>

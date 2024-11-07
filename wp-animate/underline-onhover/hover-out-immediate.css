@@ -1,0 +1,45 @@
+.link-btn {
+  font-weight: 900;
+  font-size: 0.78125vw;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  background-color: initial;
+  border: none;
+  padding: 0 0 0.6770833333vw;
+  display: inline-block;
+  line-height: 1;
+  outline: none;
+}
+
+.link-btn:after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-bottom: 0.0520833333vw solid;
+  bottom: 0;
+  width: 100%;
+  transform-origin: left;
+  left: 0;
+}
+.link-btn:hover:after {
+  animation: link-btn-hover-transition 0.5s;
+}
+@keyframes link-btn-hover-transition {
+  0% {
+    transform: none;
+    transform-origin: right;
+  }
+  50% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  50.001% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: none;
+    transform-origin: left;
+  }
+}

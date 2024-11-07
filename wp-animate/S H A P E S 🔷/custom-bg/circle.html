@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .rotated-div {
+      width: 200px;
+      height: 200px;
+      background-color: #3498db; /* Set your desired background color */
+      position: relative;
+      transform: rotate(-45deg);
+      margin: 50px; /* Adjust margin as needed */
+      border-radius: 50%;
+    }
+
+    .inner-content {
+      transform: rotate(45deg);
+      text-align: center;
+      color: white; /* Set text color */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="rotated-div">
+    <div class="inner-content">
+      Your Content Here
+    </div>
+  </div>
+</body>
+</html>

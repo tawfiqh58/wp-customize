@@ -1,0 +1,37 @@
+<style>
+        
+    .jet-form-builder-file-upload__fields {
+          display: flex;
+      }
+    .input-icon {
+      width: 1em;
+      filter: invert(1);
+      left: 0;
+      position: absolute;
+      z-index: 0;
+    }
+    .jet-form-builder-file-upload__input {
+      opacity: 0;
+      height: 100%;
+      z-index: 1;
+    }
+      
+  </style>
+  <script>
+      function domReady() {
+        var imgElement = document.createElement("img");
+        imgElement.className = "input-icon";
+        imgElement.src = "/wp-content/uploads/2024/01/477180.png";
+
+        var fileUploadFieldsDiv = document.querySelector(
+          ".jet-form-builder-file-upload__fields"
+        );
+        fileUploadFieldsDiv.appendChild(imgElement);
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", domReady);
+      } else {
+        domReady();
+      }
+    </script>

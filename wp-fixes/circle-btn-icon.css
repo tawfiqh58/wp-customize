@@ -1,0 +1,28 @@
+selector .elementor-button {
+  position: relative;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+selector .elementor-button-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  top: -1px;
+  right: -1px;
+  position: absolute;
+  border: 1px solid #fff;
+  border-radius: 1000px;
+}
+
+selector .elementor-button-icon i {
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+selector:hover .elementor-button-icon i {
+  transform: rotate(0deg);
+}

@@ -1,0 +1,35 @@
+.jet-form-builder-progress-pages__item {
+  padding: 0 !important;
+}
+
+.jet-form-builder-progress-pages__item--circle {
+  width: 0.8em !important;
+  height: 0.8em !important;
+  color: transparent;
+
+  border: 3px solid #4b5664 !important;
+}
+
+.jet-form-builder-progress-pages__item--label {
+  display: none;
+}
+
+.jet-form-builder-progress-pages.jfb-progress-type--default.jet-form-builder-progress-pages--global {
+  display: none;
+}
+
+.jet-form-builder-progress-pages__separator {
+  margin: 5px;
+  background-color: #4b5664 !important;
+  height: 3px !important;
+  border-radius: 50px;
+}
+
+.jet-form-builder-progress-pages__item--wrapper.passed-page
+  .jet-form-builder-progress-pages__item--circle {
+  background-color: #80af1e !important;
+}
+.jet-form-builder-progress-pages__item--wrapper.active-page
+  .jet-form-builder-progress-pages__item--circle {
+  background-color: #80af1e !important;
+}

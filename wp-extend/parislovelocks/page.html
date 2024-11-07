@@ -1,0 +1,23 @@
+[cart_product_ids]
+
+<script>
+    const cartEmptyElement = document.querySelector(".elementor-shortcode");
+    const goToCheckouts = document.querySelectorAll(".goto-checkout-container");
+    const buyNows = document.querySelectorAll(".buy-now-container");
+
+    if (cartEmptyElement && cartEmptyElement.textContent.includes("Cart is empty")) {
+      goToCheckouts.forEach((el)=>{
+          el.style.display = "none";
+      });
+      buyNows.forEach((el)=>{
+          el.style.display = "block";
+      });
+    } else {
+      goToCheckouts.forEach((el)=>{
+          el.style.display = "block";
+      });
+      buyNows.forEach((el)=>{
+          el.style.display = "none";
+      })
+    }
+</script>

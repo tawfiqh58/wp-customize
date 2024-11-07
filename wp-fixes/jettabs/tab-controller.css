@@ -1,0 +1,8 @@
+selector .jet-tabs__control-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+selector .jet-tabs__control-inner {
+  padding: 0.7rem 0 !important;
+}

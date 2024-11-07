@@ -1,0 +1,3 @@
+selector .cpel-switcher__toggle.cpel-switcher__lang::after {
+    display: none;
+}

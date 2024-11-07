@@ -1,0 +1,1 @@
+mutation{ create_item (board_id:1340625163, item_name: "WHAT IS UP MY FRIENDS!") { id } }

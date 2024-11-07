@@ -1,0 +1,48 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+const header = document.querySelector('.main-header');
+const darkSections = gsap.utils.toArray('.light-section');
+
+darkSections.forEach(section => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top top",
+    end: "bottom top",
+    onEnter: () => header.classList.add("dark"),
+    onLeave: () => header.classList.remove("dark"),
+    onLeaveBack: () => header.classList.remove("dark"),
+    onEnterBack: () => header.classList.add("dark"),
+    
+  });
+});
+
+</script>
+
+
+
+.main-header .dark-header, main-header .light-header {
+    transform: opacity .3s ease;
+}
+    .main-header .dark-header {
+        opacity: 0;
+    }
+    .main-header .light-header {
+        opacity: 1;
+    }
+    .main-header.dark .dark-header {
+        opacity: 1;
+    }
+    .main-header.dark .light-header {
+        opacity: 0;
+    }
+
+
+    // parent will contain 2 header (Dark & Light) fully qualified class="dark-header" class="light-header"
+    // both Dark and Light will be position absolute
+    // parent will be position absolute & Sticky Top
+    // & z-index 999 -> class="main-header"
+    // don't need - margin for the header

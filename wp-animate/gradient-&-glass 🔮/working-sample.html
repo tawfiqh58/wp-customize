@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="c" style="width: 100%"></canvas>
+    <script src="https://rawgithub.com/jwagner/simplex-noise.js/master/simplex-noise.js"></script>
+    <script>
+      var canvas = document.getElementById('c');
+      canvas.height = Math.ceil(window.innerHeight / 10);
+      canvas.width = Math.ceil(window.innerWidth / 10);
+
+      var simplex = new SimplexNoise(),
+        ctx = canvas.getContext('2d'),
+        imgdata = ctx.getImageData(0, 0, canvas.width, canvas.height),
+        data = imgdata.data,
+        t = 0;
+
+      var step = function () {
+        for (var x = 0; x < canvas.width; x++) {
+          for (var y = 0; y < canvas.height; y++) {
+            var r = simplex.noise3D(x / 120, y / 300, t / 500);
+            var g = simplex.noise3D(x / 120, y / 300, t / 500);
+            var b = simplex.noise3D(x / 120, y / 330, t / 500);
+            data[(x + y * canvas.width) * 4 + 0] = ((r + b) * 160) / 3;
+            data[(x + y * canvas.width) * 4 + 1] = ((g + r) * 120) / 3;
+            data[(x + y * canvas.width) * 4 + 2] = ((b + r + g) * 0) / 3;
+            data[(x + y * canvas.width) * 4 + 3] = 255;
+          }
+        }
+        t++;
+        ctx.putImageData(imgdata, 0, 0);
+        window.requestAnimationFrame(step);
+      };
+      window.requestAnimationFrame(step);
+    </script>
+  </body>
+</html>

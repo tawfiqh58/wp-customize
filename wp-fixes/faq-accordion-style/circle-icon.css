@@ -1,0 +1,29 @@
+selector .elementor-accordion-icon {
+  margin-top: -0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  border: 1px solid #707070;
+  border-radius: 1000px;
+  font-size: 0.6rem;
+}
+
+selector .elementor-accordion-item .elementor-tab-title {
+  border-bottom: 1px solid #707070;
+}
+
+/* Hover color */
+selector .elementor-accordion-title {
+  transition: all .3s ease;
+}
+selector .elementor-accordion-icon {
+transition: all .3s ease;
+}
+selector .elementor-tab-title:hover .elementor-accordion-title {
+  color: var(--e-global-color-14b2656) !important;
+}
+selector .elementor-tab-title:hover .elementor-accordion-icon {
+  color: var(--e-global-color-14b2656) !important;
+}

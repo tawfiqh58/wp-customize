@@ -1,0 +1,41 @@
+<script>
+  jQuery(document).ready(function ($) {
+    function updateResultsText() {
+      // Set an ID #main-listing
+      var totalPages =
+        $("#main-listing .jet-listing-grid__items").data("pages") || 0;
+      var paged = $("#main-listing .jet-listing-grid__items").data("page") || 1;
+
+      var postsPerPage = 16; // Get & set from WP settings
+
+      var totalProducts = totalPages * postsPerPage;
+
+      var firstItem = postsPerPage * (paged - 1) + 1;
+      var lastItem = Math.min(totalProducts, postsPerPage * paged);
+
+      if (totalProducts > 0 && lastItem >= firstItem) {
+        $("#results-range").text(
+          "Showing " +
+            firstItem +
+            "–" +
+            lastItem +
+            " of " +
+            totalProducts +
+            " results"
+        );
+      } else {
+        $("#results-range").text("No results found");
+      }
+    }
+
+    updateResultsText();
+
+    // On ajax change
+    $(document).on(
+      "jet-filter-content-rendered jet-smart-pagination-loaded",
+      function () {
+        updateResultsText();
+      }
+    );
+  });
+</script>

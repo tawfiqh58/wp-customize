@@ -1,0 +1,8 @@
+selector .hero-grad-text {
+    color: #6c2bd9;
+    background-color: #8855e1;
+  background-image: linear-gradient(146deg, #8855e1 19%, #02afba);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .input-icon {
+        width: 1em;
+        filter: invert(1);
+        left: 0;
+        position: absolute;
+        z-index: 0;
+      }
+      .jet-form-builder-file-upload__input {
+        opacity: 0;
+        height: 100%;
+        z-index: 1;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="jet-form-builder-file-upload__fields">
+      <input
+        class="jet-form-builder__field file-field jet-form-builder-file-upload__input"
+        name="upload"
+        data-field-name="upload"
+        type="file"
+        data-form_id="96"
+        id="upload"
+        required="required"
+        data-jfb-sync="null"
+        data-max_size="134217728"
+      />
+      
+    </div>
+    <script>
+        function domReady() {
+          var imgElement = document.createElement("img");
+          imgElement.className = "input-icon";
+          imgElement.src =
+            "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/paper_clip-512.png";
+  
+          var fileUploadFieldsDiv = document.querySelector(
+            ".jet-form-builder-file-upload__fields"
+          );
+          fileUploadFieldsDiv.appendChild(imgElement);
+        }
+  
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", domReady);
+        } else {
+          domReady();
+        }
+      </script>
+  </body>
+</html>

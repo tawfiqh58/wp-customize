@@ -1,0 +1,153 @@
+// Set ID of header section sticky-header // Take another section // add html
+widget make it absolute and past the code
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var headerHeight = document.getElementById("sticky-header").offsetHeight;
+
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+
+    if (currentScrollPos > headerHeight) {
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("sticky-header").style.top = "0";
+      } else {
+        document.getElementById("sticky-header").style.top = "-5em";
+      }
+    } else {
+      document.getElementById("sticky-header").style.top = "0";
+    }
+
+    prevScrollpos = currentScrollPos;
+  };
+</script>
+<style>
+  .elementor-location-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  #sticky-header {
+    transition: top 0.4s ease-in-out;
+  }
+</style>
+
+// Double header with animation // Layout: Same section virtical, top header
+will be a container with the id=sticky-button-section
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var prevScrollpos = window.pageYOffset;
+    var header = document.getElementById("sticky-button-section");
+    var headerHeight = header.offsetHeight;
+
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+
+      if (currentScrollPos > headerHeight) {
+        if (prevScrollpos > currentScrollPos) {
+          header.classList.remove("sticky-button-hidden");
+        } else {
+          header.classList.add("sticky-button-hidden");
+        }
+      } else {
+        header.classList.remove("sticky-button-hidden");
+      }
+
+      prevScrollpos = currentScrollPos;
+    };
+  });
+</script>
+<style>
+  #sticky-button-section {
+    max-height: 3em;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+    opacity: 1;
+  }
+
+  .sticky-button-hidden {
+    max-height: 0 !important;
+    opacity: 0;
+  }
+</style>
+
+// Double Header Sample
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var prevScrollpos = window.pageYOffset;
+    var headerHeight = document.getElementById(
+      "sticky-button-section"
+    ).offsetHeight;
+
+    window.addEventListener("resize", function () {
+      headerHeight = document.getElementById(
+        "sticky-button-section"
+      ).offsetHeight;
+    });
+
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+
+      if (currentScrollPos > headerHeight) {
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("sticky-button-section").style.height =
+            headerHeight + "px";
+        } else {
+          document.getElementById("sticky-button-section").style.height = "0px";
+        }
+      } else {
+        document.getElementById("sticky-button-section").style.height =
+          headerHeight + "px";
+      }
+
+      prevScrollpos = currentScrollPos;
+    };
+  });
+</script>
+<style>
+  #sticky-button-section {
+    transition: height 0.4s ease-in-out;
+  }
+</style>
+
+// Display None
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var prevScrollpos = window.pageYOffset;
+    var headerHeight = document.getElementById(
+      "sticky-button-section"
+    ).offsetHeight;
+
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+
+      if (currentScrollPos > headerHeight) {
+        var buttonSection = document.getElementById("sticky-button-section");
+        if (prevScrollpos > currentScrollPos) {
+          buttonSection.style.display = "block";
+          buttonSection.style.opacity = 1;
+          buttonSection.style.transform = "scaleY(1)";
+        } else {
+          buttonSection.style.display = "none";
+          buttonSection.style.opacity = 0;
+          buttonSection.style.transform = "scaleY(0)";
+        }
+      } else {
+        var buttonSection = document.getElementById("sticky-button-section");
+        buttonSection.style.display = "block";
+        buttonSection.style.opacity = 1;
+        buttonSection.style.transform = "scaleY(1)";
+      }
+
+      prevScrollpos = currentScrollPos;
+    };
+  });
+</script>
+<style>
+  #sticky-button-section {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  }
+</style>

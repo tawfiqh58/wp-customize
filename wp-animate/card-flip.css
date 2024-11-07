@@ -1,0 +1,23 @@
+selector {
+  perspective: 1000px;
+}
+
+selector .wrapper {
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+  position: relative;
+}
+
+selector:hover .wrapper {
+  transform: rotateY(-180deg);
+}
+
+selector .front-side {
+  backface-visibility: hidden;
+}
+
+selector .back-side {
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  position: absolute;
+}

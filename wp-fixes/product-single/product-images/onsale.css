@@ -1,0 +1,11 @@
+selector .onsale {
+  background-color: #5aa4e5;
+  min-height: 0;
+  min-width: 0;
+  line-height: 1;
+  border-radius: 1000px;
+  padding: 0.2rem 0.7rem !important;
+  font-size: 0.6rem;
+  top: 1rem;
+  left: 1rem;
+}

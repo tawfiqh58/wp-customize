@@ -1,0 +1,9 @@
+@media screen and (max-width: 767px) {
+  selector nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+}

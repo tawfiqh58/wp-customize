@@ -1,0 +1,9 @@
+::selection {
+  background: var(--e-global-color-accent);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: var(--e-global-color-accent);
+  color: #fff;
+}
