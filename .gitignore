@@ -1,4 +1,5 @@
 /.cred
 /apps
+.DS_Store
 
 .pem
