@@ -1,0 +1,62 @@
+<style>
+  body,
+  html {
+    font-size: 1.25vw !important;
+  }
+
+  @media screen and (max-width: 767px) {
+    body,
+    html {
+      font-size: 4.26666666667vw !important;
+    }
+  }
+</style>
+
+<script src="https://static.kak2c.ru/v2/kak2c.checkout.js"></script>
+<link rel="stylesheet" href="https://static.kak2c.ru/v2/kak2c.checkout.css" />
+
+<script>
+  var kak2c_domain = 'shop83375';
+  document.addEventListener('DOMContentLoaded', function () {
+    kaktusWidget({
+      domain: kak2c_domain,
+
+      //Аналитика. Это примерный код. Вместо YYYY подставьте ID вашего счетчика Яндекс.
+      //Если Вы используете счетчик, отричный от Яндекс.Метрики замените этот код на код Вашей метрики.
+      //Необязательно. Если аналитика вообще не нужна, удалите франмент до комментария "Конец аналитики"
+      basketClickCallback: function () {
+        //События аналитики при открытии корзины
+        yaCounter82744354.reachGoal('checkout_started');
+      },
+
+      newOrderCreatedCallback: function () {
+        //События аналитики при формированиии заказа
+        var goalParams = {
+          order_price: kaktusWidget.totalSum,
+          currency: 'RUB',
+        };
+        yaCounter82744354.reachGoal('checkout_finished', goalParams);
+      },
+      //Конец Аналитики
+    });
+
+    document.body.addEventListener('click', function (e) {
+      if (e.target.matches("a[href='#buy']")) {
+        e.preventDefault();
+
+        const article = e.target.getAttribute('id');
+        console.log('Article ID:', article); // Log to ensure the correct SKU is captured
+
+        if (article) {
+          kaktusWidget.changeCart({
+            variantExtId: article,
+            count: 1,
+            operation: 'ADD',
+          });
+        } else {
+          console.error('Article ID is undefined or missing on the button.');
+        }
+      }
+    });
+  });
+</script>
