@@ -1,0 +1,20 @@
+Form successfully submitted. 
+Форма успешно отправлена.
+
+Submit failed. 
+Отправка не удалась
+
+Validation error 
+Ошибка валидации
+
+Captcha validation failed 
+Ошибка проверки Captcha
+
+Entered an invalid email 
+Введен некорректный email
+
+Required field is empty 
+Обязательное поле пусто
+
+Internal server error 
+Внутренняя ошибка сервера
